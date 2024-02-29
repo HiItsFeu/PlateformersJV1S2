@@ -53,7 +53,7 @@ public class CharacterMouvement : MonoBehaviour
         }
         else
         {
-            
+            CanDash = false;
         }
 
         if(isDashing == true)
@@ -91,7 +91,7 @@ public class CharacterMouvement : MonoBehaviour
     private void Dash()
     {
         CanDash = false;
-        velocity.x = Mathf.Sqrt(dash * -2f * Gravity);
+        velocity.x = Mathf.Sqrt(dash * 5f);
         dashingCD -= Time.deltaTime;
     }
 }
