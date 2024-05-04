@@ -7,7 +7,7 @@ public class CharacterMouvement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 7.0f;
-    private float Gravity = -9.0f;
+    private float Gravity = -15.0f;
     private float JumpHeight = 3.0f;
 
     //Jump
@@ -22,6 +22,7 @@ public class CharacterMouvement : MonoBehaviour
     public bool CanDash = true;
     public bool isDashing;
     public float dashingCD = 1f;
+
 
     Vector2 velocity;
 
@@ -59,7 +60,7 @@ public class CharacterMouvement : MonoBehaviour
         if(isDashing == true)
         {
             Dash();
-            if(dashingCD <= 0) 
+            if(dashingCD <= 0)
             {
                 isDashing = false;
                 CanDash = true;
@@ -91,7 +92,9 @@ public class CharacterMouvement : MonoBehaviour
     private void Dash()
     {
         CanDash = false;
-        velocity.x = Mathf.Sqrt(dash * 5f);
+        velocity.x = Mathf.Sqrt(speed * 5f);
         dashingCD -= Time.deltaTime;
     }
+
+
 }
