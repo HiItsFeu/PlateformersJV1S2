@@ -10,6 +10,8 @@ public class ButtonController : MonoBehaviour
 
     public KeyCode KeyToPress;
 
+    bool activation = false;
+
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
@@ -17,6 +19,11 @@ public class ButtonController : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            activation = !activation;
+            GetComponent<SpriteRenderer>().enabled = activation;
+        }
         if(Input.GetKeyDown(KeyToPress))
         {
             theSR.sprite = pressedImage;

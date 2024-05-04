@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public HealthBar healthBar;
     public HealthBarMob healthBarMob;
     public GameOverScreen GameOverScreen;
+    public CharacterMouvement Mouvement;
 
     public int maxHealth = 10;
     public int currentHealth;
@@ -55,23 +56,26 @@ public class GameManager : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
+        currentHealthMob = maxHealthMob;
+        healthBarMob.SetMaxHealthMob(maxHealthMob);
+
         scoreText.text = "Score: 0";
 
         hitText.text = "Hits: 0";
 
         currentMultiplier = 1;
         currentHit = 0;
-        gameObject.tag = "SpecialNote";
     }
 
     void Update()
     {
         if(!startPlaying)
         {
-            if(Input.anyKeyDown)
+            if(Input.GetKeyDown(KeyCode.Space))
             {
                 startPlaying=true;
                 theBS.hasStarted = true;
+                Mouvement.CanMoove = false;
 
                 theMusic.Play();
             }
@@ -144,7 +148,7 @@ public class GameManager : MonoBehaviour
 
         if(currentHealthMob <= 0)
         {
-            //win
+            GameWin();
         }
     }
 
@@ -163,6 +167,29 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Damage");
         DealDamageToMob(1);
+    }
+
+    public void SpecialNoteMissed()
+    {
+        TakeDamage(1);
+
+        missSFX.clip=soundsMiss[Random.Range(0,soundsMiss.Length)];
+        missSFX.Play();
+
+        Debug.Log("Missed Note");
+        
+        currentMultiplier = 1;
+        multiplierTracker = 0;
+        currentHit = 0;
+
+        multiText.text = "Multiplier: x" + currentMultiplier;
+        hitText.text = "Hits: " + currentHit;
+    }
+
+    void GameWin()
+    {
+        Mouvement.CanMoove = true;
+        Debug.Log("Game Win");
     }
 
 }

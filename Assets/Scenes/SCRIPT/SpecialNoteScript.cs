@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteObject : MonoBehaviour
+public class SpecialNote : MonoBehaviour
 {
     public bool canBePressed;
     public KeyCode KeyToPress;
@@ -18,7 +18,7 @@ public class NoteObject : MonoBehaviour
             {
                 Destroyed = true;
                 gameObject.SetActive(false);
-                GameManager.instance.NoteHit();
+                GameManager.instance.SpecialNotes();
             }
         }
 
@@ -26,7 +26,7 @@ public class NoteObject : MonoBehaviour
         {
             canBePressed = false;
             AlreadyMissed = true;
-            GameManager.instance.NoteMissed();
+            GameManager.instance.SpecialNoteMissed();
         }
     }
 

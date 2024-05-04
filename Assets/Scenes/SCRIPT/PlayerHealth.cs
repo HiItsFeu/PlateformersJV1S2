@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public GameManager Manager;
+    
     public int maxHealth = 10;
     public int currentHealth;
 
@@ -29,4 +31,6 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
     }
+
+
 }
