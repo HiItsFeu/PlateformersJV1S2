@@ -14,15 +14,33 @@ public class GameManager : MonoBehaviour
     public BeatScroller theBS;
 
     public static GameManager instance;
+
     public HealthBar healthBar;
+
     public HealthBarMob healthBarMob;
+
     public GameOverScreen GameOverScreen;
+
     public PlayerMovement Mouvement;
+
+    public DestroyEnemy DestroyEnemy;
+
+    public CanvaManager CanvaManagerHealth;
+    public SpriteManager SpriteManagerGuitar;
+    public CanvaHealthmobManager CanvaHealthmobManager;
+    public CanvaScoreManager CanvaScoreManager;
+    
+    public ButtonController ButtonController;
+    public ButtonControllerRed ButtonControllerRed;
+    public ButtonControllerYellow ButtonControllerYellow;
+    public ButtonControllerGreen ButtonControllerGreen;
+
+    public CanvaPauseMeny CanvaPauseMenu;
 
     public int maxHealth = 10;
     public int currentHealth;
     
-    public int maxHealthMob = 5;
+    public int maxHealthMob = 2;
     public int currentHealthMob;
 
     public int currentScore;
@@ -65,9 +83,10 @@ public class GameManager : MonoBehaviour
 
         currentMultiplier = 1;
         currentHit = 0;
+
     }
 
-    void Update()
+    public void Update()
     {
         if(!startPlaying)
         {
@@ -76,9 +95,36 @@ public class GameManager : MonoBehaviour
                 startPlaying=true;
                 theBS.hasStarted = true;
                 Mouvement.CanMoove = false;
+                CanvaManagerHealth.Activation();
+
+                SpriteManagerGuitar.Activation();
+
+                CanvaScoreManager.Activation();
+
+                CanvaHealthmobManager.Activation();
+
+                ButtonController.Activation();
+
+                ButtonControllerRed.Activation();
+
+                ButtonControllerYellow.Activation();
+
+                ButtonControllerGreen.Activation();
 
                 theMusic.Play();
+
+
             }
+
+            //if (CanvaPauseMenu.GameIsPaused)
+            //{
+                //theMusic.Stop();
+            //}
+
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            theMusic.Stop();
         }
     }
     public void NoteHit()
@@ -163,7 +209,7 @@ public class GameManager : MonoBehaviour
         
     }
     
-    public void SpecialNotes ()
+    public void SpecialNotes()
     {
         Debug.Log("Damage");
         DealDamageToMob(1);
@@ -186,10 +232,29 @@ public class GameManager : MonoBehaviour
         hitText.text = "Hits: " + currentHit;
     }
 
-    void GameWin()
+    public void GameWin()
     {
+        gameHasEnded = true;
         Mouvement.CanMoove = true;
         Debug.Log("Game Win");
+
+        //DestroyEnemy.DestroyGameObject();
+
+        CanvaManagerHealth.Unactivated();
+
+        SpriteManagerGuitar.Unactivated();
+
+        CanvaHealthmobManager.Unactivated();
+
+        CanvaScoreManager.Unactivated();
+
+        ButtonController.Unactivated();
+
+        ButtonControllerRed.Unactivated();
+
+        ButtonControllerYellow.Unactivated();
+
+        ButtonControllerGreen.Unactivated();
     }
 
 }

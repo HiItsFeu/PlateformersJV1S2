@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonController : MonoBehaviour
+public class ButtonControllerGreen : MonoBehaviour
 {
-    private SpriteRenderer theSR;
+public SpriteRenderer theSR;
     public Sprite defaultImage;
     public Sprite pressedImage;
+    public GameManager GameManager;
 
     public KeyCode KeyToPress;
 
@@ -15,15 +16,12 @@ public class ButtonController : MonoBehaviour
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
+        
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
-        {
-            activation = !activation;
-            GetComponent<SpriteRenderer>().enabled = activation;
-        }
+
         if(Input.GetKeyDown(KeyToPress))
         {
             theSR.sprite = pressedImage;
@@ -33,5 +31,17 @@ public class ButtonController : MonoBehaviour
         {
             theSR.sprite = defaultImage;
         }
+    }
+
+    public void Activation()
+    {
+        activation = !activation;
+        GetComponent<SpriteRenderer>().enabled = activation;
+    }
+
+    public void Unactivated()
+    {
+        activation = !activation;
+        GetComponent<SpriteRenderer>().enabled = activation;
     }
 }
