@@ -13,7 +13,7 @@ public class SpriteManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             activation = !activation;
             GetComponent<SpriteRenderer>().enabled = activation;

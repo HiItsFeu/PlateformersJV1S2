@@ -7,9 +7,12 @@ public class CharacterMouvement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 7.0f;
+    public float gravity = -15f;
+    public float jumpHeight = 3f;
     public bool CanMoove = true;
 
     //Jump
+    
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -36,9 +39,22 @@ public class CharacterMouvement : MonoBehaviour
 
         Vector2 move = transform.right * x;
 
+        velocity.y += gravity * Time.deltaTime;
+
+
         if (CanMoove==true && move != Vector2.zero)
         {
             controller.Move(move * speed * Time.deltaTime);
+            controller.Move(velocity * Time.deltaTime);
+            Jump();
+        }
+    }
+
+    void Jump()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
 }
