@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public HealthBar healthBar;
     public HealthBarMob healthBarMob;
     public GameOverScreen GameOverScreen;
-    //public CharacterMouvement Mouvement;
+    public PlayerMovement Mouvement;
 
     public int maxHealth = 10;
     public int currentHealth;
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
             {
                 startPlaying=true;
                 theBS.hasStarted = true;
-                //Mouvement.CanMoove = false;
+                Mouvement.CanMoove = false;
 
                 theMusic.Play();
             }
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
 
     void GameWin()
     {
-        //Mouvement.CanMoove = true;
+        Mouvement.CanMoove = true;
         Debug.Log("Game Win");
     }
 

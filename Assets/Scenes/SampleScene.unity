@@ -158,6 +158,7 @@ MonoBehaviour:
   healthBar: {fileID: 809371717}
   healthBarMob: {fileID: 1908703682}
   GameOverScreen: {fileID: 1058018392}
+  Mouvement: {fileID: 659206368}
   maxHealth: 10
   currentHealth: 0
   maxHealthMob: 5
@@ -3257,7 +3258,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 31f7c8d4d14ddff49bcbf11e548a7fe5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3281,6 +3282,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: eaaa67d2192f3a74cba34ccfadfb85e3, type: 2}
+  _isJumpCut: 0
+  _isJumpFalling: 0
+  _wallJumpStartTime: 0
+  _lastWallJumpDir: 0
+  _moveInput: {x: 0, y: 0}
+  CanMoove: 1
   _groundCheckPoint: {fileID: 1239287513}
   _groundCheckSize: {x: 0.49, y: 0.03}
   _frontWallCheckPoint: {fileID: 1961056563}
@@ -3298,7 +3305,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 659206362}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 31f7c8d4d14ddff49bcbf11e548a7fe5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
