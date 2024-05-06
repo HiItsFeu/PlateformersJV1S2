@@ -238,7 +238,7 @@ public class GameManager : MonoBehaviour
         Mouvement.CanMoove = true;
         Debug.Log("Game Win");
 
-        //DestroyEnemy.DestroyGameObject();
+        DestroyEnemy.DestroyGameObject();
 
         CanvaManagerHealth.Unactivated();
 
@@ -256,5 +256,7 @@ public class GameManager : MonoBehaviour
 
         ButtonControllerGreen.Unactivated();
     }
+
+    
 
 }
