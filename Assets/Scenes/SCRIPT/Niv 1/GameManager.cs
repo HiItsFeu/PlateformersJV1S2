@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public DestroyEnemy DestroyEnemy;
 
+    public NoteObject NoteObject;
+
     public CanvaManager CanvaManagerHealth;
     public SpriteManager SpriteManagerGuitar;
     public CanvaHealthmobManager CanvaHealthmobManager;

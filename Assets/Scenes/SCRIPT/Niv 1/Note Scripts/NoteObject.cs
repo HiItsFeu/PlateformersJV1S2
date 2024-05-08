@@ -10,6 +10,8 @@ public class NoteObject : MonoBehaviour
     public bool AlreadyMissed;
     public bool Destroyed;
 
+    public GameObject HitEffect, MissEffect;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyToPress))
@@ -19,6 +21,7 @@ public class NoteObject : MonoBehaviour
                 Destroyed = true;
                 gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
+                Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
             }
         }
 
@@ -27,6 +30,7 @@ public class NoteObject : MonoBehaviour
             canBePressed = false;
             AlreadyMissed = true;
             GameManager.instance.NoteMissed();
+            Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
         }
     }
 
