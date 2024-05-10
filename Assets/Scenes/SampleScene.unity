@@ -424,6 +424,7 @@ MonoBehaviour:
   GameOverScreen: {fileID: 1058018392}
   Mouvement: {fileID: 659206368}
   DestroyEnemy: {fileID: 855088586}
+  NoteObject: {fileID: 0}
   CanvaManagerHealth: {fileID: 278684253}
   SpriteManagerGuitar: {fileID: 1715448263}
   CanvaHealthmobManager: {fileID: 1589646232}
@@ -795,6 +796,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &178754923
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1042,6 +1045,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &230219436
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1205,6 +1210,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &272622510
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1484,6 +1491,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &279765271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1647,6 +1656,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &351060876
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1810,6 +1821,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &370113901
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2107,6 +2120,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &401540059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2347,6 +2362,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &507540137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2857,6 +2874,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &540389588
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3020,6 +3039,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &564476759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3294,6 +3315,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!1 &593302221
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,6 +3480,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!1 &602875645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4385,6 +4410,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &731658578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4548,6 +4575,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &737142388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5168,6 +5197,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &874871762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5331,6 +5362,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &886046165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5765,6 +5798,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &996160432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5928,6 +5963,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1020434589
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6319,6 +6356,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1062293498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6888,6 +6927,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1162127585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7162,6 +7203,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!1 &1230061034
 GameObject:
   m_ObjectHideFlags: 0
@@ -7214,6 +7257,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1230061037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7408,6 +7453,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1284148117
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7941,6 +7988,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1433870440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8179,6 +8228,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1490524840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8342,6 +8393,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1535275614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8505,6 +8558,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1546939368
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8913,6 +8968,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1594262745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9210,6 +9267,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1641807082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9756,6 +9815,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1727252120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9919,6 +9980,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1798906176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10224,6 +10287,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!1 &1864458398
 GameObject:
   m_ObjectHideFlags: 0
@@ -10897,6 +10962,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &1970084986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11060,6 +11127,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &2031181235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11184,6 +11253,8 @@ GameObject:
   - component: {fileID: 2109250489}
   - component: {fileID: 2109250488}
   - component: {fileID: 2109250491}
+  - component: {fileID: 2109250493}
+  - component: {fileID: 2109250492}
   m_Layer: 7
   m_Name: SpecialNote
   m_TagString: SpecialNote
@@ -11199,13 +11270,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109250485}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 63.680004, y: 8.23, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.005135992, w: 0.9999868}
+  m_LocalPosition: {x: 63.694, y: 7.63, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1867387192}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.589}
 --- !u!61 &2109250488
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11242,7 +11313,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.36, y: 0.7}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11306,7 +11377,7 @@ SpriteRenderer:
   m_SortingLayerID: -621766703
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
+  m_Sprite: {fileID: 1228083891, guid: 05b9a2a8be442e64a89e79f8707dc12b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11334,6 +11405,41 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
+--- !u!95 &2109250492
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109250485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a7d9d618b5a0ea44a391f0d7e48f1ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &2109250493
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109250485}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &2117610382
 GameObject:
   m_ObjectHideFlags: 0
@@ -11519,6 +11625,8 @@ MonoBehaviour:
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
+  HitEffect: {fileID: 5681826654828335727, guid: 84401126591478544a1865d49d02400e, type: 3}
+  MissEffect: {fileID: 1076969148091999297, guid: 00e3e403234b72046b750169421a00ee, type: 3}
 --- !u!61 &2135951007
 BoxCollider2D:
   m_ObjectHideFlags: 0
