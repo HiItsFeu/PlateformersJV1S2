@@ -12,6 +12,7 @@ public class CanvaPauseMeny : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameManager GameManager;
+    private float currentTime;
     
     void Start()
     {
@@ -39,7 +40,11 @@ public class CanvaPauseMeny : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameManager.theMusic.Pause();
+        if(GameManager.theMusic.isPlaying)
+        {
+            currentTime = GameManager.theMusic.time;
+            GameManager.theMusic.Stop();
+        }
         GameIsPaused = true;
     }
     
@@ -47,7 +52,11 @@ public class CanvaPauseMeny : MonoBehaviour
     {   
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameManager.theMusic.UnPause();
+        if(!GameManager.theMusic.isPlaying)
+        {
+            GameManager.theMusic.Play();
+            GameManager.theMusic.time = currentTime;
+        }
         GameIsPaused = false;
     }
     

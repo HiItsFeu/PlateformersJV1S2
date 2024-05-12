@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2239898966851996787}
   - component: {fileID: 3808364436012338096}
   - component: {fileID: 6186128608637602861}
+  - component: {fileID: 5118389393399805877}
   m_Layer: 0
   m_Name: MissEffect
   m_TagString: Untagged
@@ -98,3 +99,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifetime: 1
+--- !u!210 &5118389393399805877
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076969148091999297}
+  m_Enabled: 1
+  m_SortingLayerID: -385550309
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

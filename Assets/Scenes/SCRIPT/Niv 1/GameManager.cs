@@ -79,9 +79,9 @@ public class GameManager : MonoBehaviour
         currentHealthMob = maxHealthMob;
         healthBarMob.SetMaxHealthMob(maxHealthMob);
 
-        scoreText.text = "Score: 0";
+        scoreText.text = "Score : 0";
 
-        hitText.text = "Hits: 0";
+        hitText.text = "Hits : 0";
 
         currentMultiplier = 1;
         currentHit = 0;
@@ -149,13 +149,13 @@ public class GameManager : MonoBehaviour
 
             }
         
-        multiText.text = "Multiplier: x" + currentMultiplier;
+        multiText.text = "Multiplier : x" + currentMultiplier;
 
         currentScore += scorePerNote * currentMultiplier;
-        scoreText.text = "Score: " + currentScore;
+        scoreText.text = "Score : " + currentScore;
         
         currentHit += ScoreHitPerNote;
-        hitText.text = "Hits: " + currentHit;
+        hitText.text = "Hits : " + currentHit;
     }
 
     public void NoteMissed()
@@ -171,8 +171,8 @@ public class GameManager : MonoBehaviour
         multiplierTracker = 0;
         currentHit = 0;
 
-        multiText.text = "Multiplier: x" + currentMultiplier;
-        hitText.text = "Hits: " + currentHit;
+        multiText.text = "Multiplier : x" + currentMultiplier;
+        hitText.text = "Hits : " + currentHit;
     }
     
     void TakeDamage(int damage)
@@ -230,8 +230,8 @@ public class GameManager : MonoBehaviour
         multiplierTracker = 0;
         currentHit = 0;
 
-        multiText.text = "Multiplier: x" + currentMultiplier;
-        hitText.text = "Hits: " + currentHit;
+        multiText.text = "Multiplier : x" + currentMultiplier;
+        hitText.text = "Hits : " + currentHit;
     }
 
     public void GameWin()
