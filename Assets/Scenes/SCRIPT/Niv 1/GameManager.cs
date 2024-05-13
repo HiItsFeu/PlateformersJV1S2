@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
                 startPlaying=true;
                 theBS.hasStarted = true;
                 Mouvement.CanMoove = false;
+                
                 CanvaManagerHealth.Activation();
 
                 SpriteManagerGuitar.Activation();
@@ -112,6 +113,8 @@ public class GameManager : MonoBehaviour
                 ButtonControllerYellow.Activation();
 
                 ButtonControllerGreen.Activation();
+
+
 
                 theMusic.Play();
 
