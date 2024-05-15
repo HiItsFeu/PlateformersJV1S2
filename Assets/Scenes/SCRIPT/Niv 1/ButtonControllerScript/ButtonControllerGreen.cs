@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ButtonControllerGreen : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public SpriteRenderer theSR;
     public Sprite pressedImage;
     public GameManager GameManager;
 
-    public KeyCode KeyToPress;
+    //public KeyCode KeyToPress;
 
     bool activation = false;
 
@@ -22,12 +23,12 @@ public SpriteRenderer theSR;
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyToPress))
+        if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.JoystickButton16))
         {
             theSR.sprite = pressedImage;
         }
 
-        if(Input.GetKeyUp(KeyToPress))
+        if(Input.GetKeyUp(KeyCode.R) || Input.GetKeyUp(KeyCode.JoystickButton16))
         {
             theSR.sprite = defaultImage;
         }

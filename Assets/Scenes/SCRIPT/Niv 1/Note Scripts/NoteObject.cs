@@ -6,6 +6,7 @@ public class NoteObject : MonoBehaviour
 {
     public bool canBePressed;
     public KeyCode KeyToPress;
+    public KeyCode ButtonToPress;
     public bool Missed;
     public bool AlreadyMissed;
     public bool Destroyed;
@@ -14,7 +15,7 @@ public class NoteObject : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyToPress))
+        if(Input.GetKeyDown(KeyToPress) || Input.GetKeyDown(ButtonToPress))
         {
             if(canBePressed)
             {

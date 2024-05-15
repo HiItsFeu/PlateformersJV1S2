@@ -9,7 +9,7 @@ public class ButtonController : MonoBehaviour
     public Sprite pressedImage;
     public GameManager GameManager;
 
-    public KeyCode KeyToPress;
+    //public KeyCode KeyToPress;
 
     bool activation = false;
 
@@ -22,12 +22,12 @@ public class ButtonController : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyToPress))
+        if(Input.GetKeyDown(KeyCode.Q) ||Input.GetKeyDown(KeyCode.JoystickButton4))
         {
             theSR.sprite = pressedImage;
         }
 
-        if(Input.GetKeyUp(KeyToPress))
+        if(Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             theSR.sprite = defaultImage;
         }

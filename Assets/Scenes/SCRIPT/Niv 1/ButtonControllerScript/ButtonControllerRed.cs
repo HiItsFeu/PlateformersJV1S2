@@ -9,7 +9,7 @@ public SpriteRenderer theSR;
     public Sprite pressedImage;
     public GameManager GameManager;
 
-    public KeyCode KeyToPress;
+    //public KeyCode KeyToPress;
 
     bool activation = false;
 
@@ -22,12 +22,12 @@ public SpriteRenderer theSR;
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyToPress))
+        if(Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.JoystickButton5))
         {
             theSR.sprite = pressedImage;
         }
 
-        if(Input.GetKeyUp(KeyToPress))
+        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.JoystickButton5))
         {
             theSR.sprite = defaultImage;
         }
