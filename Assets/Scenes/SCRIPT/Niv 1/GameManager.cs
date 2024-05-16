@@ -27,8 +27,15 @@ public class GameManager : MonoBehaviour
 
     public NoteObject NoteObject;
 
-    public CanvaManager CanvaManagerHealth;
+    public Transform DuelPlayerPos;
+
+    public Transform Target;
+
     public SpriteManager SpriteManagerGuitar;
+    public SpriteManagerAmpli SpriteManagerAmpli;
+    public SpriteManagerManche SpriteManagerManche;
+
+    public CanvaManager CanvaManagerHealth;
     public CanvaHealthmobManager CanvaHealthmobManager;
     public CanvaScoreManager CanvaScoreManager;
     
@@ -67,6 +74,8 @@ public class GameManager : MonoBehaviour
     public AudioClip[] soundsHit;
 
     public bool gameHasEnded=false;
+
+    public 
     
 
     void Start()
@@ -113,6 +122,14 @@ public class GameManager : MonoBehaviour
                 ButtonControllerYellow.Activation();
 
                 ButtonControllerGreen.Activation();
+
+                SpriteManagerAmpli.ActivationAmpli();
+
+                SpriteManagerManche.Activation();
+
+                transform.position = DuelPlayerPos.position;
+
+                Target.position = DuelPlayerPos.position;
 
 
 
@@ -260,6 +277,11 @@ public class GameManager : MonoBehaviour
         ButtonControllerYellow.Unactivated();
 
         ButtonControllerGreen.Unactivated();
+
+        SpriteManagerAmpli.UnactivatedAmpli();
+
+        SpriteManagerManche.Unactivated();
+
     }
 
     
