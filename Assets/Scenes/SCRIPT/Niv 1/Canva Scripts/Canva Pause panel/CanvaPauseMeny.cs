@@ -52,10 +52,13 @@ public class CanvaPauseMeny : MonoBehaviour
     {   
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        if(!GameManager.theMusic.isPlaying)
+        if(GameManager.startPlaying)
         {
-            GameManager.theMusic.Play();
-            GameManager.theMusic.time = currentTime;
+            if(!GameManager.theMusic.isPlaying)
+            {
+                GameManager.theMusic.Play();
+                GameManager.theMusic.time = currentTime;
+            }
         }
         GameIsPaused = false;
     }
@@ -64,7 +67,10 @@ public class CanvaPauseMeny : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
-        GameManager.theMusic.Play();
+        if(GameManager.startPlaying)
+        {
+            GameManager.theMusic.Play();
+        }
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
     }

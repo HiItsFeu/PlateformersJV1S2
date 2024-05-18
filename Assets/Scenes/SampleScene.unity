@@ -425,8 +425,13 @@ MonoBehaviour:
   Mouvement: {fileID: 659206368}
   DestroyEnemy: {fileID: 855088586}
   NoteObject: {fileID: 0}
-  CanvaManagerHealth: {fileID: 278684253}
+  DuelPlayerPos: {fileID: 0}
+  Target: {fileID: 0}
   SpriteManagerGuitar: {fileID: 1715448263}
+  SpriteManagerAmpli: {fileID: 0}
+  SpriteManagerManche: {fileID: 0}
+  ButtonHelpSprite: {fileID: 0}
+  CanvaManagerHealth: {fileID: 278684253}
   CanvaHealthmobManager: {fileID: 1589646232}
   CanvaScoreManager: {fileID: 1954136036}
   ButtonController: {fileID: 8918395026177218709}
@@ -793,6 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -896,7 +902,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1042,6 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -1145,7 +1152,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1207,6 +1214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -1310,7 +1318,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1488,6 +1496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -1591,7 +1600,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1653,6 +1662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -1756,7 +1766,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1818,6 +1828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -1921,7 +1932,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2117,6 +2128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -2220,7 +2232,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2359,6 +2371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -2462,7 +2475,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2871,6 +2884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -2974,7 +2988,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3036,6 +3050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -3139,7 +3154,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3240,7 +3255,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3312,6 +3327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -3450,7 +3466,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 91bb72558c9b5db488eec2d0e08ad48c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3477,6 +3493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 114
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -4407,6 +4424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -4510,7 +4528,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4572,6 +4590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -4675,7 +4694,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5194,6 +5213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -5297,7 +5317,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5359,6 +5379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -5462,7 +5483,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5795,6 +5816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -5898,7 +5920,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5960,6 +5982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -6063,7 +6086,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6353,6 +6376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -6456,7 +6480,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6924,6 +6948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -7027,7 +7052,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7173,7 +7198,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7200,6 +7225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -7254,6 +7280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -7357,7 +7384,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7450,6 +7477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -7553,7 +7581,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7985,6 +8013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -8088,7 +8117,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8225,6 +8254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -8328,7 +8358,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8390,6 +8420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -8493,7 +8524,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8555,6 +8586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -8658,7 +8690,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8965,6 +8997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -9068,7 +9101,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9264,6 +9297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -9367,7 +9401,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9812,6 +9846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -9915,7 +9950,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9977,6 +10012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -10080,7 +10116,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10257,7 +10293,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02a1573ddf7780d4ebe7891ca15f0572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10284,6 +10320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 119
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -10959,6 +10996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -11062,7 +11100,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11124,6 +11162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -11227,7 +11266,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 949ec501518e6ed4991da6aaa1cf0871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11375,7 +11414,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1228083891, guid: 05b9a2a8be442e64a89e79f8707dc12b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11402,6 +11441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 113
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -11622,6 +11662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   KeyToPress: 101
+  ButtonToPress: 0
   Missed: 0
   AlreadyMissed: 0
   Destroyed: 0
@@ -11725,7 +11766,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -621766703
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d8d2806afa7ee45ace579161f80dce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12140,7 +12181,6 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: c3c13b1f8baa5dd4a86d3dc186668178, type: 3}
   pressedImage: {fileID: 21300000, guid: 2d10ec486261df445b73774ff82f1b69, type: 3}
   GameManager: {fileID: 33504024}
-  KeyToPress: 114
 --- !u!114 &4507656323773390255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12386,7 +12426,6 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: ed2984e24d5df6f46a80ead6ad2964fa, type: 3}
   pressedImage: {fileID: 21300000, guid: 8f47ff751b3bdec48862adf0100c74fa, type: 3}
   GameManager: {fileID: 33504024}
-  KeyToPress: 101
 --- !u!212 &6135809595194864577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12527,7 +12566,6 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: 1bbda9210988dfd4db252a09838d254f, type: 3}
   pressedImage: {fileID: 21300000, guid: cacc39dd2a4e88a43aadeddd73e9b1e2, type: 3}
   GameManager: {fileID: 33504024}
-  KeyToPress: 119
 --- !u!1001 &6753092531316307259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12674,7 +12712,6 @@ MonoBehaviour:
   defaultImage: {fileID: 21300000, guid: ad187f74f2d0cc4499f39a0267b9eda8, type: 3}
   pressedImage: {fileID: 21300000, guid: 18bf226de2d59284e904c26430f659c9, type: 3}
   GameManager: {fileID: 33504024}
-  KeyToPress: 113
 --- !u!50 &8918395026177218710
 Rigidbody2D:
   serializedVersion: 4

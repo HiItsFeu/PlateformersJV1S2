@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public SpriteManager SpriteManagerGuitar;
     public SpriteManagerAmpli SpriteManagerAmpli;
     public SpriteManagerManche SpriteManagerManche;
+    public ButtonHelpSprite ButtonHelpSprite;
 
     public CanvaManager CanvaManagerHealth;
     public CanvaHealthmobManager CanvaHealthmobManager;
@@ -127,6 +128,8 @@ public class GameManager : MonoBehaviour
 
                 SpriteManagerManche.Activation();
 
+                ButtonHelpSprite.Unactivated();
+
                 transform.position = DuelPlayerPos.position;
 
                 Target.position = DuelPlayerPos.position;
@@ -143,10 +146,6 @@ public class GameManager : MonoBehaviour
                 //theMusic.Stop();
             //}
 
-        }
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            theMusic.Stop();
         }
     }
     public void NoteHit()
@@ -259,6 +258,7 @@ public class GameManager : MonoBehaviour
         gameHasEnded = true;
         Mouvement.CanMoove = true;
         Debug.Log("Game Win");
+        theMusic.Stop();
 
         DestroyEnemy.DestroyGameObject();
 
