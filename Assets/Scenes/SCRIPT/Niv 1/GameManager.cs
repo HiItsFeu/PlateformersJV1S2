@@ -71,12 +71,15 @@ public class GameManager : MonoBehaviour
 
     public AudioSource hitSFX;
     public AudioSource missSFX;
+    
+    public AudioSource SoundDuelWin;
+    public AudioSource SoundDuelLoosed;
+    public AudioSource SoundTheDuelStart;
+    
     public AudioClip[] soundsMiss;
     public AudioClip[] soundsHit;
 
     public bool gameHasEnded=false;
-
-    public 
     
 
     void Start()
@@ -133,18 +136,13 @@ public class GameManager : MonoBehaviour
                 transform.position = DuelPlayerPos.position;
 
                 Target.position = DuelPlayerPos.position;
-
-
-
+                
+                SoundTheDuelStart.Play();
+                
                 theMusic.Play();
 
 
             }
-
-            //if (CanvaPauseMenu.GameIsPaused)
-            //{
-                //theMusic.Stop();
-            //}
 
         }
     }
@@ -226,6 +224,7 @@ public class GameManager : MonoBehaviour
             gameHasEnded = true;
             GameOverScreen.Setup(currentScore);
             Debug.Log("Game Over");
+            SoundDuelLoosed.Play();
         }
         
     }
@@ -259,6 +258,7 @@ public class GameManager : MonoBehaviour
         Mouvement.CanMoove = true;
         Debug.Log("Game Win");
         theMusic.Stop();
+        SoundDuelWin.Play();
 
         DestroyEnemy.DestroyGameObject();
 
