@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
     
-    public int maxHealthMob = 2;
+    public int maxHealthMob = 5;
     public int currentHealthMob;
 
     public int currentScore;
