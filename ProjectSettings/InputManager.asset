@@ -306,7 +306,7 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 8
     joyNum: 15
   - serializedVersion: 3
@@ -322,7 +322,7 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 9
     joyNum: 16
   m_UsePhysicalKeys: 1

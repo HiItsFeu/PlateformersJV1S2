@@ -24,7 +24,7 @@ public class CanvaPauseMeny : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton9))
         {
             if(GameIsPaused)
             {

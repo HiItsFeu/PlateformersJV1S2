@@ -23,12 +23,12 @@ public SpriteRenderer theSR;
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.JoystickButton16))
+        if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.JoystickButton16) || Gamepad.current.rightTrigger.wasPressedThisFrame)
         {
             theSR.sprite = pressedImage;
         }
 
-        if(Input.GetKeyUp(KeyCode.R) || Input.GetKeyUp(KeyCode.JoystickButton16))
+        if(Input.GetKeyUp(KeyCode.R) || Input.GetKeyUp(KeyCode.JoystickButton16) || Gamepad.current.rightTrigger.wasReleasedThisFrame)
         {
             theSR.sprite = defaultImage;
         }

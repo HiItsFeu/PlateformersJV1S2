@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NoteObject : MonoBehaviour
 {
@@ -14,8 +15,12 @@ public class NoteObject : MonoBehaviour
     public GameObject HitEffect, MissEffect;
 
     void Update()
-    {
-        if(Input.GetKeyDown(KeyToPress) || Input.GetKeyDown(ButtonToPress))
+    { 
+        bool bTriggerPressed = false;
+        if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.leftTrigger.wasPressedThisFrame;
+        if(KeyToPress == KeyCode.R) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
+
+        if(Input.GetKeyDown(KeyToPress) || Input.GetKeyDown(ButtonToPress) || bTriggerPressed)
         {
             if(canBePressed)
             {
