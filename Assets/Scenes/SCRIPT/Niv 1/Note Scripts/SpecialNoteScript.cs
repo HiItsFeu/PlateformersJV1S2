@@ -17,8 +17,8 @@ public class SpecialNote : MonoBehaviour
     void Update()
     {
         bool bTriggerPressed = false;
-        if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.leftTrigger.wasPressedThisFrame;
-        if(KeyToPress == KeyCode.R) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
+        if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
+        if(KeyToPress == KeyCode.R) bTriggerPressed = Gamepad.current.leftTrigger.wasPressedThisFrame;
 
         if(Input.GetKeyDown(KeyToPress) || Input.GetKeyDown(ButtonToPress) || bTriggerPressed)
         {

@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     {
         if(!startPlaying)
         {
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton3))
             {
                 startPlaying=true;
                 theBS.hasStarted = true;
