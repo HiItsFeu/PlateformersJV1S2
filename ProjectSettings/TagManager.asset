@@ -8,6 +8,7 @@ TagManager:
   - SpecialNote
   - Mob
   - Reset Player
+  - LittleMob
   layers:
   - Default
   - TransparentFX
