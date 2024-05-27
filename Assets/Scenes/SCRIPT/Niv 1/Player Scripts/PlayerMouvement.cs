@@ -203,10 +203,16 @@ public class PlayerMovement : MonoBehaviour
 
 				SetGravityScale(Data.gravityScale);
 			}
-			#endregion
-    }
-
+    	}
+		
+		if(CanMoove==false)
+		{
+			RB.constraints=RigidbodyConstraints2D.FreezePosition;
 		}
+		#endregion
+	
+
+	}
 
     public void FixedUpdate()
 	{

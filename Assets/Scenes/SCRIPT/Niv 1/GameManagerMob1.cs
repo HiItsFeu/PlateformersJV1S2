@@ -26,15 +26,22 @@ public class GameManagerMob1 : MonoBehaviour
     public Transform DuelPlayerPos;
 
     public Transform Target;
+    
+    public CameraFollow CameraFollow;
 
     public SpriteManager SpriteManagerGuitar;
     public SpriteManagerAmpli SpriteManagerAmpli;
     public SpriteManagerManche SpriteManagerManche;
+    public SpriteManagerLigneOrange SpriteManagerLigneOrange;
     
     public ButtonController ButtonController;
     public ButtonControllerRed ButtonControllerRed;
     public ButtonControllerYellow ButtonControllerYellow;
     public ButtonControllerGreen ButtonControllerGreen;
+
+    public Transform ResetCamera;
+
+    public Transform CameraPlayer;
 
     public CanvaPauseMeny CanvaPauseMenu;
     
@@ -60,41 +67,17 @@ public class GameManagerMob1 : MonoBehaviour
 
         currentHealthMob = maxHealthMob;
 
+        startPlaying = false;
+
     }
 
     public void Update()
     {
         if(!startPlaying)
         {
-            if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton3))
+            if(startPlaying==true)
             {
-                startPlaying=true;
-                theBS.hasStarted = true;
-                Mouvement.CanMoove = false;
-
-                SpriteManagerGuitar.Activation();
-
-                ButtonController.Activation();
-
-                ButtonControllerRed.Activation();
-
-                ButtonControllerYellow.Activation();
-
-                ButtonControllerGreen.Activation();
-
-                SpriteManagerAmpli.ActivationAmpli();
-
-                SpriteManagerManche.Activation();
-
-                transform.position = DuelPlayerPos.position;
-
-                Target.position = DuelPlayerPos.position;
-                
-                SoundTheDuelStart.Play();
-                
-                theMusic.Play();
-
-
+                StartTheGame();
             }
 
         }
@@ -153,6 +136,7 @@ public class GameManagerMob1 : MonoBehaviour
         Debug.Log("Game Win");
         theMusic.Stop();
         SoundDuelWin.Play();
+        CameraFollow.CameraIsFollowing = true;
 
         DestroyEnemy.DestroyGameObject();
 
@@ -168,6 +152,42 @@ public class GameManagerMob1 : MonoBehaviour
 
         SpriteManagerManche.Unactivated();
 
+        SpriteManagerLigneOrange.Unactivated();
+
+    }
+
+    public void StartTheGame()
+    {
+        startPlaying=true;
+        theBS.hasStarted = true;
+        Mouvement.CanMoove = false;
+
+        CameraFollow.CameraIsFollowing = false;
+
+        SpriteManagerGuitar.Activation();
+
+        ButtonController.Activation();
+
+        ButtonControllerRed.Activation();
+
+        ButtonControllerYellow.Activation();
+
+        ButtonControllerGreen.Activation();
+
+        SpriteManagerAmpli.ActivationAmpli();
+
+        SpriteManagerManche.Activation();
+
+        SpriteManagerLigneOrange.Activation();
+
+        transform.position = DuelPlayerPos.position;
+
+        Target.position = DuelPlayerPos.position;
+
+        transform.position = ResetCamera.position;
+        CameraPlayer.position = ResetCamera.position;
+                
+        theMusic.Play();
     }
 
     

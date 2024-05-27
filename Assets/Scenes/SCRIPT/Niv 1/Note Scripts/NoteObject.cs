@@ -12,6 +12,8 @@ public class NoteObject : MonoBehaviour
     public bool AlreadyMissed;
     public bool Destroyed;
 
+    public Animation NoteExplosion;
+
     public GameObject HitEffect, MissEffect;
 
     void Update()
@@ -28,6 +30,7 @@ public class NoteObject : MonoBehaviour
                 gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
                 Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
+                //NoteExplosion.Play();
             }
         }
 
