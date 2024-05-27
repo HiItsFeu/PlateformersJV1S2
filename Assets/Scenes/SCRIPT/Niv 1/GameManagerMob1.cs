@@ -136,6 +136,7 @@ public class GameManagerMob1 : MonoBehaviour
         Debug.Log("Game Win");
         theMusic.Stop();
         SoundDuelWin.Play();
+
         CameraFollow.CameraIsFollowing = true;
 
         DestroyEnemy.DestroyGameObject();
@@ -189,7 +190,6 @@ public class GameManagerMob1 : MonoBehaviour
                 
         theMusic.Play();
     }
-
     
 
 }

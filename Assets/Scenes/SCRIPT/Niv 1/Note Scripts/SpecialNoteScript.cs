@@ -29,6 +29,14 @@ public class SpecialNote : MonoBehaviour
                 GameManager.instance.SpecialNotes();
                 Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
             }
+            
+            if(!canBePressed)
+            {
+                Destroyed = false;
+                Missed = true;
+                GameManager.instance.NoteMissed();
+                Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
+            }
         }
 
         if(Missed==true && AlreadyMissed==false)
