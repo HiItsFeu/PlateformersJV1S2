@@ -12,12 +12,27 @@ public class NoteObject : MonoBehaviour
     public bool AlreadyMissed;
     public bool Destroyed;
 
+    public GameManager gManager;
+
     public Animation NoteExplosion;
 
     public GameObject HitEffect, MissEffect;
 
+    public SpriteRenderer Sprite;
+    
+    public bool activation = false;
+
+    void Start()
+    {
+        Sprite = GetComponent<SpriteRenderer>();
+    }
+    
     void Update()
-    { 
+    {
+        if(gManager.startPlaying==true)
+        {
+            Activation();
+        }
         bool bTriggerPressed = false;
         if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
         if(KeyToPress == KeyCode.R) bTriggerPressed = Gamepad.current.leftTrigger.wasPressedThisFrame;
@@ -57,5 +72,11 @@ public class NoteObject : MonoBehaviour
         {
             Missed = true;
         }
+    }
+
+    public void Activation()
+    {
+        activation = !activation;
+        GetComponent<SpriteRenderer>().enabled = activation;
     }
 }

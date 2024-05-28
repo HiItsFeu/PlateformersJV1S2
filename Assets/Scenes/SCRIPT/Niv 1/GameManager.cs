@@ -30,11 +30,17 @@ public class GameManager : MonoBehaviour
     public Transform DuelPlayerPos;
 
     public Transform Target;
+    
+    public CameraFollow CameraFollow;
+
+    public Transform ResetCamera;
+    public Transform CameraPlayer;
 
     public SpriteManager SpriteManagerGuitar;
     public SpriteManagerAmpli SpriteManagerAmpli;
     public SpriteManagerManche SpriteManagerManche;
     public ButtonHelpSprite ButtonHelpSprite;
+    public SpriteManagerLigneOrange SpriteManagerLigneOrange;
 
     public CanvaManager CanvaManagerHealth;
     public CanvaHealthmobManager CanvaHealthmobManager;
@@ -99,6 +105,8 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         currentHit = 0;
 
+        CameraFollow.CameraIsFollowing = true;
+
     }
 
     public void Update()
@@ -110,6 +118,7 @@ public class GameManager : MonoBehaviour
                 startPlaying=true;
                 theBS.hasStarted = true;
                 Mouvement.CanMoove = false;
+                CameraFollow.CameraIsFollowing = true;
                 
                 CanvaManagerHealth.Activation();
 
@@ -133,15 +142,18 @@ public class GameManager : MonoBehaviour
 
                 ButtonHelpSprite.Unactivated();
 
+                SpriteManagerLigneOrange.Activation();
+
                 transform.position = DuelPlayerPos.position;
 
                 Target.position = DuelPlayerPos.position;
-                
-                SoundTheDuelStart.Play();
+
+                transform.position = ResetCamera.position;
+                CameraPlayer.position = ResetCamera.position;
                 
                 theMusic.Play();
 
-
+                
             }
 
         }
@@ -259,6 +271,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Win");
         theMusic.Stop();
         SoundDuelWin.Play();
+        CameraFollow.CameraIsFollowing = true;
 
         DestroyEnemy.DestroyGameObject();
 
@@ -281,6 +294,8 @@ public class GameManager : MonoBehaviour
         SpriteManagerAmpli.UnactivatedAmpli();
 
         SpriteManagerManche.Unactivated();
+
+        SpriteManagerLigneOrange.Unactivated();
 
     }
 

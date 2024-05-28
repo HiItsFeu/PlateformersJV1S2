@@ -7,7 +7,7 @@ public class ResetPlayer : MonoBehaviour
     public Transform RespawnPoint;
     public Transform Target;
 
-    void Die()
+    public void Die()
     {
         Respawn();
     }

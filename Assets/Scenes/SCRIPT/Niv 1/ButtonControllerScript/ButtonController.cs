@@ -16,7 +16,6 @@ public class ButtonController : MonoBehaviour
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
-        
     }
 
     void Update()

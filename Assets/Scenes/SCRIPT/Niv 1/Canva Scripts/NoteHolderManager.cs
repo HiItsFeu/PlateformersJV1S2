@@ -5,24 +5,24 @@ using UnityEngine.UI;
 
 public class NoteHolderManager : MonoBehaviour
 {
-    public GameManager GameManager;
-    public GameObject NoteHolder;
+    public bool activation = false;
 
-    void start()
+    public SpriteRenderer Sprite;
+    
+    public void Start()
     {
-        NoteHolder.SetActive(false);
+        Sprite = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    public void Activation()
     {
-        if(GameManager.theMusic.isPlaying)
-        {
-            Activate();
-        }
+        activation = !activation;
+        GetComponent<SpriteRenderer>().enabled = activation;
     }
 
-    void Activate()
+    public void Unactivated()
     {
-        NoteHolder.SetActive(true);
+        activation = !activation;
+        GetComponent<SpriteRenderer>().enabled = activation;
     }
 }
