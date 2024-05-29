@@ -30,10 +30,6 @@ public class SpecialNote : MonoBehaviour
         {
             Activation();
         }
-        else if(gManager.gameHasEnded)
-        {
-            Unactivated();
-        }
 
         bool bTriggerPressed = false;
         if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
@@ -47,14 +43,6 @@ public class SpecialNote : MonoBehaviour
                 gameObject.SetActive(false);
                 GameManager.instance.SpecialNotes();
                 Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
-            }
-            
-            if(!canBePressed)
-            {
-                Destroyed = false;
-                Missed = true;
-                GameManager.instance.NoteMissed();
-                Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
             }
         }
 
@@ -84,12 +72,6 @@ public class SpecialNote : MonoBehaviour
     }
 
     public void Activation()
-    {
-        activation = !activation;
-        GetComponent<SpriteRenderer>().enabled = activation;
-    }
-
-    public void Unactivated()
     {
         activation = !activation;
         GetComponent<SpriteRenderer>().enabled = activation;

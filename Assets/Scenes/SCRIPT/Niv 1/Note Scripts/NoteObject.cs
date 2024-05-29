@@ -29,10 +29,6 @@ public class NoteObject : MonoBehaviour
     
     void Update()
     {
-        if(gManager.startPlaying==true)
-        {
-            Activation();
-        }
         bool bTriggerPressed = false;
         if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
         if(KeyToPress == KeyCode.R) bTriggerPressed = Gamepad.current.leftTrigger.wasPressedThisFrame;
@@ -55,6 +51,14 @@ public class NoteObject : MonoBehaviour
             AlreadyMissed = true;
             GameManager.instance.NoteMissed();
             Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if(gManager.startPlaying==true)
+        {
+            Activation();
         }
     }
 
