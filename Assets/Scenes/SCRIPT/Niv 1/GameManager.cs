@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
                 startPlaying=true;
                 theBS.hasStarted = true;
                 Mouvement.CanMoove = false;
-                CameraFollow.CameraIsFollowing = true;
+                CameraFollow.CameraIsFollowing = false;
                 
                 CanvaManagerHealth.Activation();
 
@@ -152,10 +152,7 @@ public class GameManager : MonoBehaviour
                 CameraPlayer.position = ResetCamera.position;
                 
                 theMusic.Play();
-
-                
             }
-
         }
     }
     public void NoteHit()
@@ -204,7 +201,7 @@ public class GameManager : MonoBehaviour
         hitText.text = "Hits : " + currentHit;
     }
     
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 

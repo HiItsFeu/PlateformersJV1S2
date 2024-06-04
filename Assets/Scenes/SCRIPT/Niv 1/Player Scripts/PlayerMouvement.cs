@@ -66,6 +66,9 @@ public class PlayerMovement : MonoBehaviour
         if (CanMoove == true)
 		{
 			#region TIMERS
+
+			RB.constraints=RigidbodyConstraints2D.None;
+
 			LastOnGroundTime -= Time.deltaTime;
 			LastOnWallTime -= Time.deltaTime;
 			LastOnWallRightTime -= Time.deltaTime;

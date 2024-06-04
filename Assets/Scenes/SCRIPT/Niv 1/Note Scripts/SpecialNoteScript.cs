@@ -26,10 +26,6 @@ public class SpecialNote : MonoBehaviour
 
     void Update()
     {
-        if(gManager.startPlaying==true)
-        {
-            Activation();
-        }
 
         bool bTriggerPressed = false;
         if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
@@ -62,6 +58,18 @@ public class SpecialNote : MonoBehaviour
             canBePressed = true;
         }
     }
+
+    void FixedUpdate()
+    {
+        if(gManager.startPlaying==true)
+        {
+            Activation(true);
+        }
+        else 
+        {
+            Activation(false);
+        }
+    }
     
     void OnTriggerExit2D(Collider2D other)
     {
@@ -71,9 +79,9 @@ public class SpecialNote : MonoBehaviour
         }
     }
 
-    public void Activation()
+    public void Activation(bool b)
     {
-        activation = !activation;
+        activation = b;
         GetComponent<SpriteRenderer>().enabled = activation;
     }
 }

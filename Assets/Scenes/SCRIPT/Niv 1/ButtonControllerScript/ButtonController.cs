@@ -13,6 +13,8 @@ public class ButtonController : MonoBehaviour
 
     bool activation = false;
 
+    public bool legal = false;
+
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
@@ -24,6 +26,11 @@ public class ButtonController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q) ||Input.GetKeyDown(KeyCode.JoystickButton4))
         {
             theSR.sprite = pressedImage;
+            if(legal==false)
+            {
+                GameManager.TakeDamage(1);
+                GameManager.missSFX.Play();
+            }
         }
 
         if(Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.JoystickButton4))
@@ -43,4 +50,6 @@ public class ButtonController : MonoBehaviour
         activation = !activation;
         GetComponent<SpriteRenderer>().enabled = activation;
     }
+
+
 }
