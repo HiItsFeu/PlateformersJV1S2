@@ -8,7 +8,7 @@ public class CanvaManager : MonoBehaviour
 
     public void Activation()
     {
-        Debug.Log("Canva");
+        //Debug.Log("Canva");
         activation = !activation;
         GetComponent<Canvas> ().enabled = activation;
     }

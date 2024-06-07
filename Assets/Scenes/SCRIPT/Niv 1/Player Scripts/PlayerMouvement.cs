@@ -2,11 +2,16 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
 
 	public PlayerData Data;
+
+	public Animator animator;
+
+	public UnityEvent OnLandEvent;
 
 	#region Variables
     public Rigidbody2D RB { get; private set; }
@@ -69,6 +74,8 @@ public class PlayerMovement : MonoBehaviour
 
 			RB.constraints=RigidbodyConstraints2D.None;
 
+			animator.SetBool("CanMoove", true);
+
 			LastOnGroundTime -= Time.deltaTime;
 			LastOnWallTime -= Time.deltaTime;
 			LastOnWallRightTime -= Time.deltaTime;
@@ -80,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
 			#region INPUT HANDLER
 			_moveInput.x = Input.GetAxisRaw("Horizontal");
 			_moveInput.y = Input.GetAxisRaw("Vertical");
+
+			animator.SetFloat("Speed", Mathf.Abs(_moveInput.x));
 
 			if (_moveInput.x != 0)
 				CheckDirectionToFace(_moveInput.x > 0);
@@ -116,6 +125,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 				LastOnWallTime = Mathf.Max(LastOnWallLeftTime, LastOnWallRightTime);
+
+				
 			}
 			#endregion
 
@@ -123,6 +134,8 @@ public class PlayerMovement : MonoBehaviour
 			if (IsJumping && RB.velocity.y < 0)
 			{
 				IsJumping = false;
+
+				OnLanding();
 
 				if(!IsWallJumping)
 					_isJumpFalling = true;
@@ -148,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
 				IsWallJumping = false;
 				_isJumpCut = false;
 				_isJumpFalling = false;
+				animator.SetBool("IsJumping", true);
 				Jump();
 			}
 
@@ -211,6 +225,7 @@ public class PlayerMovement : MonoBehaviour
 		if(CanMoove==false)
 		{
 			RB.constraints=RigidbodyConstraints2D.FreezePosition;
+			animator.SetBool("CanMoove", false);
 		}
 		#endregion
 	
@@ -414,4 +429,9 @@ public class PlayerMovement : MonoBehaviour
 		Gizmos.DrawWireCube(_backWallCheckPoint.position, _wallCheckSize);
 	}
     #endregion
+
+	public void OnLanding()
+	{
+		animator.SetBool("IsJumping", false);
+	}
 }

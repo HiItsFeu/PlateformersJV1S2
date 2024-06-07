@@ -21,7 +21,7 @@ public SpriteRenderer theSR;
         
     }
 
-    void Update()
+    void LateUpdate()
     {
 
         if(Input.GetKeyDown(KeyCode.E) ||Input.GetKeyDown(KeyCode.JoystickButton15) || Gamepad.current.rightTrigger.wasPressedThisFrame)
@@ -29,8 +29,8 @@ public SpriteRenderer theSR;
             theSR.sprite = pressedImage;
             if(legal==false)
             {
-                GameManager.TakeDamage(1);
-                GameManager.missSFX.Play();
+                GameManager.NoteMissed();
+                Debug.Log("Yellow");
             }
         }
 

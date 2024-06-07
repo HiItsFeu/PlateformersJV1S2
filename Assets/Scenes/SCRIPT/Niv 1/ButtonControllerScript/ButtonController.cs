@@ -20,7 +20,7 @@ public class ButtonController : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void LateUpdate()
     {
 
         if(Input.GetKeyDown(KeyCode.Q) ||Input.GetKeyDown(KeyCode.JoystickButton4))
@@ -28,8 +28,8 @@ public class ButtonController : MonoBehaviour
             theSR.sprite = pressedImage;
             if(legal==false)
             {
-                GameManager.TakeDamage(1);
-                GameManager.missSFX.Play();
+                GameManager.NoteMissed();
+                Debug.Log("Blue");
             }
         }
 

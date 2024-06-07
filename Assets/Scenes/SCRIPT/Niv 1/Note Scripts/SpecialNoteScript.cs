@@ -17,7 +17,10 @@ public class SpecialNote : MonoBehaviour
     public GameObject HitEffect, MissEffect;
 
     public SpriteRenderer Sprite;
+    
     public bool activation = false;
+
+    GameObject lastButtonTouched;
 
     void Start()
     {
@@ -39,6 +42,11 @@ public class SpecialNote : MonoBehaviour
                 gameObject.SetActive(false);
                 GameManager.instance.SpecialNotes();
                 Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
+
+                if(lastButtonTouched.GetComponent<ButtonController>() != null) lastButtonTouched.GetComponent<ButtonController>().legal = false;
+                if(lastButtonTouched.GetComponent<ButtonControllerRed>() != null) lastButtonTouched.GetComponent<ButtonControllerRed>().legal = false;
+                if(lastButtonTouched.GetComponent<ButtonControllerGreen>() != null) lastButtonTouched.GetComponent<ButtonControllerGreen>().legal = false;
+                if(lastButtonTouched.GetComponent<ButtonControllerYellow>() != null) lastButtonTouched.GetComponent<ButtonControllerYellow>().legal = false;
             }
         }
 
@@ -56,6 +64,13 @@ public class SpecialNote : MonoBehaviour
         if(other.tag == "Activator")
         {
             canBePressed = true;
+            
+            if(other.GetComponent<ButtonController>() != null) other.GetComponent<ButtonController>().legal = true;
+            if(other.GetComponent<ButtonControllerRed>() != null) other.GetComponent<ButtonControllerRed>().legal = true;
+            if(other.GetComponent<ButtonControllerGreen>() != null) other.GetComponent<ButtonControllerGreen>().legal = true;
+            if(other.GetComponent<ButtonControllerYellow>() != null) other.GetComponent<ButtonControllerYellow>().legal = true;
+
+            lastButtonTouched = other.gameObject;
         }
     }
 
@@ -76,6 +91,11 @@ public class SpecialNote : MonoBehaviour
         if(other.tag == "Activator" && Destroyed==false)
         {
             Missed = true;
+
+            if(other.GetComponent<ButtonController>() != null) other.GetComponent<ButtonController>().legal = false;
+            if(other.GetComponent<ButtonControllerRed>() != null) other.GetComponent<ButtonControllerRed>().legal = false;
+            if(other.GetComponent<ButtonControllerGreen>() != null) other.GetComponent<ButtonControllerGreen>().legal = false;
+            if(other.GetComponent<ButtonControllerYellow>() != null) other.GetComponent<ButtonControllerYellow>().legal = false;
         }
     }
 

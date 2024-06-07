@@ -85,6 +85,8 @@ public class GameManager : MonoBehaviour
     public AudioClip[] soundsMiss;
     public AudioClip[] soundsHit;
 
+    public Animator animator;
+
     public bool gameHasEnded=false;
     
 
@@ -119,6 +121,7 @@ public class GameManager : MonoBehaviour
                 theBS.hasStarted = true;
                 Mouvement.CanMoove = false;
                 CameraFollow.CameraIsFollowing = false;
+                animator.SetBool("GameOver", false);
                 
                 CanvaManagerHealth.Activation();
 
@@ -152,6 +155,8 @@ public class GameManager : MonoBehaviour
                 CameraPlayer.position = ResetCamera.position;
                 
                 theMusic.Play();
+
+                
             }
         }
     }
@@ -161,7 +166,7 @@ public class GameManager : MonoBehaviour
         hitSFX.clip=soundsHit[Random.Range(0,soundsHit.Length)];
         hitSFX.Play();
 
-        Debug.Log("Hit On Time");
+        //Debug.Log("Hit On Time");
 
             if(currentMultiplier - 1 < multiplierThresholds.Length)
             {
@@ -191,7 +196,7 @@ public class GameManager : MonoBehaviour
         missSFX.clip=soundsMiss[Random.Range(0,soundsMiss.Length)];
         missSFX.Play();
 
-        Debug.Log("Missed Note");
+        //Debug.Log("Missed Note");
         
         currentMultiplier = 1;
         multiplierTracker = 0;
@@ -232,15 +237,16 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             GameOverScreen.Setup(currentScore);
-            Debug.Log("Game Over");
+            //Debug.Log("Game Over");
             SoundDuelLoosed.Play();
+            animator.SetBool("GameOver", true);
         }
         
     }
     
     public void SpecialNotes()
     {
-        Debug.Log("Damage");
+        //Debug.Log("Damage");
         DealDamageToMob(1);
     }
 
@@ -251,7 +257,7 @@ public class GameManager : MonoBehaviour
         missSFX.clip=soundsMiss[Random.Range(0,soundsMiss.Length)];
         missSFX.Play();
 
-        Debug.Log("Missed Note");
+        //Debug.Log("Missed Note");
         
         currentMultiplier = 1;
         multiplierTracker = 0;
@@ -265,7 +271,7 @@ public class GameManager : MonoBehaviour
     {
         gameHasEnded = true;
         Mouvement.CanMoove = true;
-        Debug.Log("Game Win");
+        //Debug.Log("Game Win");
         theMusic.Stop();
         SoundDuelWin.Play();
         CameraFollow.CameraIsFollowing = true;

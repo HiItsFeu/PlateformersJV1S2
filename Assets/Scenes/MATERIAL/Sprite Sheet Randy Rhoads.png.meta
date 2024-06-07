@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 17.2
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,7 +118,7 @@ TextureImporter:
         width: 26
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,27 +126,6 @@ TextureImporter:
       bones: []
       spriteID: 2cdcc12b0830afd40afe98225649c550
       internalID: -545894417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_3
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 563
-        width: 27
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fbdf3b2b98fd3a489cfb15d2874e3df
-      internalID: 1386920694
       vertices: []
       indices: 
       edges: []
@@ -160,7 +139,7 @@ TextureImporter:
         width: 30
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +155,12 @@ TextureImporter:
       name: Sprite Sheet Randy Rhoads_5
       rect:
         serializedVersion: 2
-        x: 82
-        y: 427
-        width: 31
-        height: 47
+        x: 211
+        y: 428
+        width: 30
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +176,12 @@ TextureImporter:
       name: Sprite Sheet Randy Rhoads_6
       rect:
         serializedVersion: 2
-        x: 147
-        y: 427
-        width: 30
-        height: 40
+        x: 275
+        y: 428
+        width: 31
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +197,12 @@ TextureImporter:
       name: Sprite Sheet Randy Rhoads_7
       rect:
         serializedVersion: 2
-        x: 211
-        y: 428
-        width: 30
-        height: 35
+        x: 338
+        y: 427
+        width: 34
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,55 +215,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_8
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 428
-        width: 31
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2be90f3c28bade94581c5f7455f60731
-      internalID: 553103452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_9
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 427
-        width: 34
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 974db61fd49b9a04a906d4f9f008101e
-      internalID: -1026781147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Sprite Sheet Randy Rhoads_15
       rect:
         serializedVersion: 2
-        x: 17
-        y: 263
+        x: 75
+        y: 262
         width: 34
-        height: 48
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,36 +236,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_16
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 263
-        width: 33
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8d0613960c9b0f4ea7bd746d005f978
-      internalID: -1229676828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Sprite Sheet Randy Rhoads_17
       rect:
         serializedVersion: 2
         x: 17
-        y: 180
+        y: 181
         width: 26
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,12 +260,12 @@ TextureImporter:
       name: Sprite Sheet Randy Rhoads_18
       rect:
         serializedVersion: 2
-        x: 83
-        y: 183
-        width: 27
-        height: 45
+        x: 465
+        y: 23
+        width: 30
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,7 +286,7 @@ TextureImporter:
         width: 29
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,7 +307,7 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -412,7 +328,7 @@ TextureImporter:
         width: 35
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -433,7 +349,7 @@ TextureImporter:
         width: 29
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,55 +362,76 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_31
+      name: Sprite Sheet Randy Rhoads_0
       rect:
         serializedVersion: 2
         x: 84
-        y: 21
-        width: 26
-        height: 47
+        y: 562
+        width: 27
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9abc031253491174cb94462d957676d1
-      internalID: -1086156491
+      spriteID: 303c2554bd2c1574b98a5527256e3590
+      internalID: -836414059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_32
+      name: Sprite Sheet Randy Rhoads_1
       rect:
         serializedVersion: 2
-        x: 148
-        y: 21
-        width: 26
+        x: 82
+        y: 427
+        width: 31
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f72f448b8d9f044aabc36cb5020910e
-      internalID: -584449753
+      spriteID: 4d869dcea59c4744f83c75dbad38d15c
+      internalID: -331285015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_33
+      name: Sprite Sheet Randy Rhoads_3
       rect:
         serializedVersion: 2
-        x: 209
-        y: 25
-        width: 29
-        height: 46
+        x: 147
+        y: 427
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b71a4058dd320b44874fe57da66cddd
+      internalID: 1386920694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Randy Rhoads_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 262
+        width: 34
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,92 +439,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a3a1f20707e772429c1b95ac1b0731b
-      internalID: 1006135094
+      spriteID: 79fca287faad9ba42a0dc1838f2f4ad7
+      internalID: 553103452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_34
+      name: Sprite Sheet Randy Rhoads_9
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 183
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9842e2844f78a4caf8b6fee9b5071c
+      internalID: -1026781147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Randy Rhoads_10
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 21
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d2a939cc126a0459d3aed2ed730ae8
+      internalID: -1592443881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Randy Rhoads_11
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 21
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6756a9c278d6f64fa615b8a0465917b
+      internalID: -1387077710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Randy Rhoads_12
       rect:
         serializedVersion: 2
         x: 273
         y: 22
         width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: babd14048f9ec464b9fd1005dfcece0a
-      internalID: 270801357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_35
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 21
-        width: 26
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 365d2273633da93479e26f4480176249
-      internalID: 25566954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_36
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 21
-        width: 26
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fea45107615dca4a807273f742a13aa
-      internalID: 822055054
+      spriteID: ec36ea69d6a64f24b953007941fa686e
+      internalID: 950042803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Randy Rhoads_37
+      name: Sprite Sheet Randy Rhoads_13
       rect:
         serializedVersion: 2
-        x: 465
-        y: 23
+        x: 209
+        y: 25
         width: 29
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bd4a6e445e12df49bd1d45c7a9f3fda
-      internalID: 589323718
+      spriteID: 7bb7733e2bfb8e140856d34c8d4f000f
+      internalID: -441322031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Randy Rhoads_14
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 21
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdfd57b9a3866b147b98fe8f13d16d8e
+      internalID: 1243028192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Randy Rhoads_16
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 21
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f876fbe966aee42bf9e3efc1261a40
+      internalID: -1229676828
       vertices: []
       indices: 
       edges: []
