@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour
 
     public Animator animator;
 
+    public Animator animator_Slash;
+
     public bool gameHasEnded=false;
     
 
@@ -122,6 +124,9 @@ public class GameManager : MonoBehaviour
                 Mouvement.CanMoove = false;
                 CameraFollow.CameraIsFollowing = false;
                 animator.SetBool("GameOver", false);
+
+                animator_Slash.SetBool ("startPlaying", true);
+                animator_Slash.SetBool ("gameHasEnded", false);
                 
                 CanvaManagerHealth.Activation();
 
@@ -240,6 +245,9 @@ public class GameManager : MonoBehaviour
             //Debug.Log("Game Over");
             SoundDuelLoosed.Play();
             animator.SetBool("GameOver", true);
+
+            animator_Slash.SetBool ("startPlaying", true);
+            animator_Slash.SetBool ("gameHasEnded", true);
         }
         
     }
@@ -299,6 +307,9 @@ public class GameManager : MonoBehaviour
         SpriteManagerManche.Unactivated();
 
         SpriteManagerLigneOrange.Unactivated();
+
+        animator_Slash.SetBool ("startPlaying", true);
+        animator_Slash.SetBool ("gameHasEnded", true);
 
     }
 

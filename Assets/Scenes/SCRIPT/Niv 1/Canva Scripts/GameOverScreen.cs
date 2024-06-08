@@ -13,6 +13,7 @@ public class GameOverScreen : MonoBehaviour
     {
         gameObject.SetActive(true);
         scoreTextMenu.text = score.ToString() + " POINTS";
+        Time.timeScale = 0f;
     }
 
     public void RestartButton()
