@@ -77,17 +77,19 @@ public class GameManager : MonoBehaviour
 
     public AudioSource hitSFX;
     public AudioSource missSFX;
+    public AudioSource SpecialNoteHit;
     
     public AudioSource SoundDuelWin;
     public AudioSource SoundDuelLoosed;
     public AudioSource SoundTheDuelStart;
     
     public AudioClip[] soundsMiss;
-    public AudioClip[] soundsHit;
 
     public Animator animator;
 
     public Animator animator_Slash;
+
+    public Animator animator_Manche;
 
     public bool gameHasEnded=false;
     
@@ -123,9 +125,13 @@ public class GameManager : MonoBehaviour
                 theBS.hasStarted = true;
                 Mouvement.CanMoove = false;
                 CameraFollow.CameraIsFollowing = false;
+
                 animator.SetBool("GameOver", false);
 
+                animator_Manche.SetBool("StartPlaying", true);
+
                 animator_Slash.SetBool ("startPlaying", true);
+
                 animator_Slash.SetBool ("gameHasEnded", false);
                 
                 CanvaManagerHealth.Activation();
@@ -160,15 +166,11 @@ public class GameManager : MonoBehaviour
                 CameraPlayer.position = ResetCamera.position;
                 
                 theMusic.Play();
-
-                
             }
         }
     }
     public void NoteHit()
     {
-        
-        hitSFX.clip=soundsHit[Random.Range(0,soundsHit.Length)];
         hitSFX.Play();
 
         //Debug.Log("Hit On Time");
@@ -248,6 +250,7 @@ public class GameManager : MonoBehaviour
 
             animator_Slash.SetBool ("startPlaying", true);
             animator_Slash.SetBool ("gameHasEnded", true);
+            animator_Manche.SetBool("StartPlaying", false);
         }
         
     }
@@ -256,6 +259,7 @@ public class GameManager : MonoBehaviour
     {
         //Debug.Log("Damage");
         DealDamageToMob(1);
+        SpecialNoteHit.Play();
     }
 
     public void SpecialNoteMissed()
@@ -310,6 +314,8 @@ public class GameManager : MonoBehaviour
 
         animator_Slash.SetBool ("startPlaying", true);
         animator_Slash.SetBool ("gameHasEnded", true);
+
+        animator_Manche.SetBool("StartPlaying", false);
 
     }
 
