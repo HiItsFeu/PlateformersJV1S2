@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8526665158009939386}
   - component: {fileID: 6204387640966091515}
   - component: {fileID: 4357568182833106732}
+  - component: {fileID: 4416869085147722592}
   m_Layer: 0
   m_Name: Touche explosion_0
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -197.061, y: -66.821, z: 0}
-  m_LocalScale: {x: 2.8540537, y: 2.8540537, z: 2.8540537}
+  m_LocalScale: {x: 3.7689, y: 3.7689, z: 6.0287843}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -385550309
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 959985710, guid: 2d500cacd601f49429239458c5883770, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,3 +107,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4416869085147722592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435453528842253005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecae69dd491de6e48a31d5f54159752f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 1

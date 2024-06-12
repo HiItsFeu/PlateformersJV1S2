@@ -14,7 +14,7 @@ public class SpecialNote : MonoBehaviour
 
     public GameManager gManager;
 
-    public GameObject HitEffect, MissEffect;
+    public GameObject HitEffect, MissEffect, ToucheExplosion;
 
     public SpriteRenderer Sprite;
     
@@ -30,7 +30,7 @@ public class SpecialNote : MonoBehaviour
     void Update()
     {
 
-        bool bTriggerPressed = false;
+        /*bool bTriggerPressed = false;
         if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
         if(KeyToPress == KeyCode.R) bTriggerPressed = Gamepad.current.leftTrigger.wasPressedThisFrame;
 
@@ -38,39 +38,36 @@ public class SpecialNote : MonoBehaviour
         {
             if(canBePressed)
             {
-                Destroyed = true;
-                gameObject.SetActive(false);
-                GameManager.instance.SpecialNotes();
-                Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
-
-                if(lastButtonTouched.GetComponent<ButtonController>() != null) lastButtonTouched.GetComponent<ButtonController>().legal = false;
-                if(lastButtonTouched.GetComponent<ButtonControllerRed>() != null) lastButtonTouched.GetComponent<ButtonControllerRed>().legal = false;
-                if(lastButtonTouched.GetComponent<ButtonControllerGreen>() != null) lastButtonTouched.GetComponent<ButtonControllerGreen>().legal = false;
-                if(lastButtonTouched.GetComponent<ButtonControllerYellow>() != null) lastButtonTouched.GetComponent<ButtonControllerYellow>().legal = false;
             }
         }
 
         if(Missed==true && AlreadyMissed==false)
         {
-            canBePressed = false;
-            AlreadyMissed = true;
-            GameManager.instance.SpecialNoteMissed();
-            Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
-        }
+
+        }*/
+    }
+
+    public void SpecialNotePress()
+    {
+        Destroyed = true;
+        gameObject.SetActive(false);
+        GameManager.instance.SpecialNotes();
+        Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
+        Instantiate (ToucheExplosion,transform.position, ToucheExplosion.transform.rotation);
+    }
+
+    public void SpecialNoteMiss()
+    {
+        GameManager.instance.SpecialNoteMissed();
+        gameObject.SetActive(false);
+        Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Activator")
+        if(other.tag == "DeadZone")
         {
-            canBePressed = true;
-            
-            if(other.GetComponent<ButtonController>() != null) other.GetComponent<ButtonController>().legal = true;
-            if(other.GetComponent<ButtonControllerRed>() != null) other.GetComponent<ButtonControllerRed>().legal = true;
-            if(other.GetComponent<ButtonControllerGreen>() != null) other.GetComponent<ButtonControllerGreen>().legal = true;
-            if(other.GetComponent<ButtonControllerYellow>() != null) other.GetComponent<ButtonControllerYellow>().legal = true;
-
-            lastButtonTouched = other.gameObject;
+            SpecialNoteMiss();
         }
     }
 
@@ -83,19 +80,6 @@ public class SpecialNote : MonoBehaviour
         else 
         {
             Activation(false);
-        }
-    }
-    
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.tag == "Activator" && Destroyed==false)
-        {
-            Missed = true;
-
-            if(other.GetComponent<ButtonController>() != null) other.GetComponent<ButtonController>().legal = false;
-            if(other.GetComponent<ButtonControllerRed>() != null) other.GetComponent<ButtonControllerRed>().legal = false;
-            if(other.GetComponent<ButtonControllerGreen>() != null) other.GetComponent<ButtonControllerGreen>().legal = false;
-            if(other.GetComponent<ButtonControllerYellow>() != null) other.GetComponent<ButtonControllerYellow>().legal = false;
         }
     }
 

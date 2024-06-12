@@ -15,25 +15,23 @@ public class NoteObject : MonoBehaviour
 
     public GameManager gManager;
 
-    public Animation NoteExplosion;
-
-    public GameObject HitEffect, MissEffect;
+    public GameObject HitEffect, MissEffect, ToucheExplosion;
 
     public SpriteRenderer Sprite;
     
     public bool activation = false;
+    
     GameObject lastButtonTouched;
 
     void Start()
     {
         Sprite = GetComponent<SpriteRenderer>();
-        hasBeenPressedLastFrame = false;
     }
     
     void Update()
     {
 
-        bool bTriggerPressed = false;
+        /*bool bTriggerPressed = false;
         if(KeyToPress == KeyCode.E) bTriggerPressed = Gamepad.current.rightTrigger.wasPressedThisFrame;
         if(KeyToPress == KeyCode.R) bTriggerPressed = Gamepad.current.leftTrigger.wasPressedThisFrame;
 
@@ -41,18 +39,6 @@ public class NoteObject : MonoBehaviour
         {
             if(canBePressed)
             {
-                Destroyed = true;
-                GameManager.instance.NoteHit();
-                Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
-                //NoteExplosion.Play();
-
-                if(lastButtonTouched.GetComponent<ButtonController>() != null) lastButtonTouched.GetComponent<ButtonController>().legal = false;
-                if(lastButtonTouched.GetComponent<ButtonControllerRed>() != null) lastButtonTouched.GetComponent<ButtonControllerRed>().legal = false;
-                if(lastButtonTouched.GetComponent<ButtonControllerGreen>() != null) lastButtonTouched.GetComponent<ButtonControllerGreen>().legal = false;
-                if(lastButtonTouched.GetComponent<ButtonControllerYellow>() != null) lastButtonTouched.GetComponent<ButtonControllerYellow>().legal = false;
-                lastButtonTouched = null;
-                gameObject.SetActive(false);
-
             }
         }
 
@@ -60,15 +46,23 @@ public class NoteObject : MonoBehaviour
         {
             canBePressed = false;
             AlreadyMissed = true;
-            GameManager.instance.NoteMissed();
-            Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
+        }*/
+    }
 
-            if(lastButtonTouched.GetComponent<ButtonController>() != null) lastButtonTouched.GetComponent<ButtonController>().legal = false;
-            if(lastButtonTouched.GetComponent<ButtonControllerRed>() != null) lastButtonTouched.GetComponent<ButtonControllerRed>().legal = false;
-            if(lastButtonTouched.GetComponent<ButtonControllerGreen>() != null) lastButtonTouched.GetComponent<ButtonControllerGreen>().legal = false;
-            if(lastButtonTouched.GetComponent<ButtonControllerYellow>() != null) lastButtonTouched.GetComponent<ButtonControllerYellow>().legal = false;
-            lastButtonTouched = null;
-        }
+    public void Press()
+    {
+        Destroyed = true;
+        GameManager.instance.NoteHit();
+        Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
+        Instantiate (ToucheExplosion,transform.position, ToucheExplosion.transform.rotation);
+        gameObject.SetActive(false);
+    }
+
+    public void Miss()
+    {
+        Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
+        GameManager.instance.NoteMissed();
+        gameObject.SetActive(false);
     }
 
     void FixedUpdate()
@@ -83,33 +77,17 @@ public class NoteObject : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Activator")
-        {
-            canBePressed = true;
-            lastButtonTouched = other.gameObject;
-
-            if(lastButtonTouched.GetComponent<ButtonController>() != null) lastButtonTouched.GetComponent<ButtonController>().legal = true;
-            if(lastButtonTouched.GetComponent<ButtonControllerRed>() != null) lastButtonTouched.GetComponent<ButtonControllerRed>().legal = true;
-            if(lastButtonTouched.GetComponent<ButtonControllerGreen>() != null) lastButtonTouched.GetComponent<ButtonControllerGreen>().legal = true;
-            if(lastButtonTouched.GetComponent<ButtonControllerYellow>() != null) lastButtonTouched.GetComponent<ButtonControllerYellow>().legal = true;
-
-        }
-    }
-    
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.tag == "Activator" && Destroyed==false)
-        {
-            Missed = true;
-            lastButtonTouched = other.gameObject;
-        }
-    }
-
     public void Activation(bool b)
     {
         activation = b;
         GetComponent<SpriteRenderer>().enabled = activation;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "DeadZone")
+        {
+            Miss();
+        }
     }
 }

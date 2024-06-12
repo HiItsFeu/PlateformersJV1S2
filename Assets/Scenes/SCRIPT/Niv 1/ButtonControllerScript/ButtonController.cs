@@ -1,42 +1,86 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ButtonController : MonoBehaviour
 {
     public SpriteRenderer theSR;
     public Sprite defaultImage;
     public Sprite pressedImage;
+    
     public GameManager GameManager;
 
-    //public KeyCode KeyToPress;
+    public NoteObject LastNoteHit;
+
+    public SpecialNote LastSpecialNoteHit;
+
+    public KeyCode KeyToPress;
+
+    public KeyCode JoystickToPress;
 
     bool activation = false;
 
-    public bool legal = false;
+    public bool bLeftTriggerToPress;
+
+    public bool bRightTriggerToPress;
+
+    bool bOtherToPress;
+
+    bool bOtherToRelease;
 
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
     }
 
-    void LateUpdate()
+    void Update()
     {
+        if(bLeftTriggerToPress == true)
+        {
+            bOtherToPress = Gamepad.current.leftTrigger.wasPressedThisFrame;
+            bOtherToRelease = Gamepad.current.leftTrigger.wasReleasedThisFrame;
+        }
 
-        if(Input.GetKeyDown(KeyCode.Q) ||Input.GetKeyDown(KeyCode.JoystickButton4))
+        else if(bRightTriggerToPress == true)
+        {
+            bOtherToPress = Gamepad.current.rightTrigger.wasPressedThisFrame;
+            bOtherToRelease = Gamepad.current.rightTrigger.wasReleasedThisFrame;
+        }
+        
+        else
+        {
+            bOtherToPress = false;
+            bOtherToRelease = false;
+        }
+
+        if(Input.GetKeyDown(KeyToPress) ||Input.GetKeyDown(JoystickToPress) || bOtherToPress)
         {
             theSR.sprite = pressedImage;
-            if(legal==false)
+            if(LastNoteHit == null)
             {
                 GameManager.NoteMissed();
-                Debug.Log("Blue");
+                Debug.Log("Hit");
+            }
+            else
+            {
+                LastNoteHit.Press();
+                LastNoteHit = null;
+            }
+            
+            if(LastSpecialNoteHit != null)
+            {
+                LastSpecialNoteHit.SpecialNotePress();
+                LastSpecialNoteHit = null;
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.JoystickButton4))
+        if(Input.GetKeyUp(KeyToPress) || Input.GetKeyUp(JoystickToPress) || bOtherToRelease)
         {
             theSR.sprite = defaultImage;
         }
+
+
     }
 
     public void Activation()
@@ -51,5 +95,24 @@ public class ButtonController : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = activation;
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.GetComponent<NoteObject>() != null)
+        {
+            LastNoteHit = other.GetComponent<NoteObject>();
+        }
+        if(other.GetComponent<SpecialNote>() != null)
+        {
+            LastSpecialNoteHit = other.GetComponent<SpecialNote>();
+        }
+    }
 
+    /*void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.GetComponent<NoteObject>() != null && LastNoteHit != null)
+        {
+            other.GetComponent<NoteObject>().Miss();
+            LastNoteHit = null;
+        }
+    }*/
 }

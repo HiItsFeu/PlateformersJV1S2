@@ -47,9 +47,9 @@ public class GameManager : MonoBehaviour
     public CanvaScoreManager CanvaScoreManager;
     
     public ButtonController ButtonController;
-    public ButtonControllerRed ButtonControllerRed;
-    public ButtonControllerYellow ButtonControllerYellow;
-    public ButtonControllerGreen ButtonControllerGreen;
+    public ButtonController ButtonControllerRed;
+    public ButtonController ButtonControllerYellow;
+    public ButtonController ButtonControllerGreen;
 
     public CanvaPauseMeny CanvaPauseMenu;
 
@@ -89,8 +89,6 @@ public class GameManager : MonoBehaviour
 
     public Animator animator_Slash;
 
-    public Animator animator_Manche;
-
     public bool gameHasEnded=false;
     
 
@@ -127,8 +125,6 @@ public class GameManager : MonoBehaviour
                 CameraFollow.CameraIsFollowing = false;
 
                 animator.SetBool("GameOver", false);
-
-                animator_Manche.SetBool("StartPlaying", true);
 
                 animator_Slash.SetBool ("startPlaying", true);
 
@@ -249,8 +245,7 @@ public class GameManager : MonoBehaviour
             animator.SetBool("GameOver", true);
 
             animator_Slash.SetBool ("startPlaying", true);
-            animator_Slash.SetBool ("gameHasEnded", true);
-            animator_Manche.SetBool("StartPlaying", false);
+            animator_Slash.SetBool ("gameHasEnded", false);
         }
         
     }
@@ -314,8 +309,6 @@ public class GameManager : MonoBehaviour
 
         animator_Slash.SetBool ("startPlaying", true);
         animator_Slash.SetBool ("gameHasEnded", true);
-
-        animator_Manche.SetBool("StartPlaying", false);
 
     }
 

@@ -9,6 +9,7 @@ TagManager:
   - Mob
   - Reset Player
   - LittleMob
+  - DeadZone
   layers:
   - Default
   - TransparentFX
