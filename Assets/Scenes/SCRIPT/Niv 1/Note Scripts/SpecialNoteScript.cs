@@ -52,13 +52,13 @@ public class SpecialNote : MonoBehaviour
         Destroyed = true;
         gameObject.SetActive(false);
         GameManager.instance.SpecialNotes();
-        Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
+        //Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
         Instantiate (ToucheExplosion,transform.position, ToucheExplosion.transform.rotation);
     }
 
     public void SpecialNoteMiss()
     {
-        GameManager.instance.SpecialNoteMissed();
+        GameManager.instance.NoteMissed();
         gameObject.SetActive(false);
         Instantiate(MissEffect, transform.position,MissEffect.transform.rotation);
     }

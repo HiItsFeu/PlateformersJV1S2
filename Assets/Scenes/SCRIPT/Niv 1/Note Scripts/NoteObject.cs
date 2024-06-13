@@ -53,7 +53,7 @@ public class NoteObject : MonoBehaviour
     {
         Destroyed = true;
         GameManager.instance.NoteHit();
-        Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
+        //Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
         Instantiate (ToucheExplosion,transform.position, ToucheExplosion.transform.rotation);
         gameObject.SetActive(false);
     }

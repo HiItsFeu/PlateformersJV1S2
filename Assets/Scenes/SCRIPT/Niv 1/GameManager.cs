@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     public CanvaPauseMeny CanvaPauseMenu;
 
-    public int maxHealth = 10;
+    public int maxHealth = 20;
     public int currentHealth;
     
     public int maxHealthMob = 5;

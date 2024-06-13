@@ -57,22 +57,32 @@ public class ButtonController : MonoBehaviour
         if(Input.GetKeyDown(KeyToPress) ||Input.GetKeyDown(JoystickToPress) || bOtherToPress)
         {
             theSR.sprite = pressedImage;
-            if(LastNoteHit == null)
+            if(GameManager.startPlaying==true)
             {
-                GameManager.NoteMissed();
-                Debug.Log("Hit");
-            }
-            else
-            {
-                LastNoteHit.Press();
-                LastNoteHit = null;
+                if(LastNoteHit == null && LastSpecialNoteHit == null)
+                {
+                    GameManager.NoteMissed();
+                    Debug.Log("Miss");
+                }
+                else
+                {
+                    LastNoteHit.Press();
+                    LastNoteHit = null;
+                }
+
+                if(LastNoteHit != null && LastSpecialNoteHit == null)
+                {
+                    GameManager.NoteMissed();
+                    Debug.Log("Special Miss");
+                }
+                
+                if(LastSpecialNoteHit != null)
+                {
+                    LastSpecialNoteHit.SpecialNotePress();
+                    LastSpecialNoteHit = null;
+                }
             }
             
-            if(LastSpecialNoteHit != null)
-            {
-                LastSpecialNoteHit.SpecialNotePress();
-                LastSpecialNoteHit = null;
-            }
         }
 
         if(Input.GetKeyUp(KeyToPress) || Input.GetKeyUp(JoystickToPress) || bOtherToRelease)

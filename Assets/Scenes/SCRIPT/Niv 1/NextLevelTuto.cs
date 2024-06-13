@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class NextLevelScriptTuto : MonoBehaviour
 {
+    public SceneControllerTuto SceneControllerTuto;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            SceneControllerTuto.instance.NextLevel();
+            SceneControllerTuto.NextLevel();
         }
     }
 }
