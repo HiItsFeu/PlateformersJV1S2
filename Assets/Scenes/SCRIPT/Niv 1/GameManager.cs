@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
 
     public CanvaPauseMeny CanvaPauseMenu;
 
+    public DuelZoneManager DZManager;
+
     public int maxHealth = 20;
     public int currentHealth;
     
@@ -115,53 +117,56 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if(!startPlaying)
+        if(DZManager.DuelCanBeStart==true)
         {
-            if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton3))
+            if(!startPlaying)
             {
-                startPlaying=true;
-                theBS.hasStarted = true;
-                Mouvement.CanMoove = false;
-                CameraFollow.CameraIsFollowing = false;
+                if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton3))
+                {
+                    startPlaying=true;
+                    theBS.hasStarted = true;
+                    Mouvement.CanMoove = false;
+                    CameraFollow.CameraIsFollowing = false;
 
-                animator.SetBool("GameOver", false);
+                    animator.SetBool("GameOver", false);
 
-                animator_Slash.SetBool ("startPlaying", true);
+                    animator_Slash.SetBool ("startPlaying", true);
 
-                animator_Slash.SetBool ("gameHasEnded", false);
-                
-                CanvaManagerHealth.Activation();
+                    animator_Slash.SetBool ("gameHasEnded", false);
+                    
+                    CanvaManagerHealth.Activation();
 
-                SpriteManagerGuitar.Activation();
+                    SpriteManagerGuitar.Activation();
 
-                CanvaScoreManager.Activation();
+                    CanvaScoreManager.Activation();
 
-                CanvaHealthmobManager.Activation();
+                    CanvaHealthmobManager.Activation();
 
-                ButtonController.Activation();
+                    ButtonController.Activation();
 
-                ButtonControllerRed.Activation();
+                    ButtonControllerRed.Activation();
 
-                ButtonControllerYellow.Activation();
+                    ButtonControllerYellow.Activation();
 
-                ButtonControllerGreen.Activation();
+                    ButtonControllerGreen.Activation();
 
-                SpriteManagerAmpli.ActivationAmpli();
+                    SpriteManagerAmpli.ActivationAmpli();
 
-                SpriteManagerManche.Activation();
+                    SpriteManagerManche.Activation();
 
-                ButtonHelpSprite.Unactivated();
+                    ButtonHelpSprite.Unactivated();
 
-                SpriteManagerLigneOrange.Activation();
+                    SpriteManagerLigneOrange.Activation();
 
-                transform.position = DuelPlayerPos.position;
+                    transform.position = DuelPlayerPos.position;
 
-                Target.position = DuelPlayerPos.position;
+                    Target.position = DuelPlayerPos.position;
 
-                transform.position = ResetCamera.position;
-                CameraPlayer.position = ResetCamera.position;
-                
-                theMusic.Play();
+                    transform.position = ResetCamera.position;
+                    CameraPlayer.position = ResetCamera.position;
+                    
+                    theMusic.Play();
+                }
             }
         }
     }

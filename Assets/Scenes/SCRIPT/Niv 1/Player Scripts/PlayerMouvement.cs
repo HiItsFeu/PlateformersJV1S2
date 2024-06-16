@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 			#region TIMERS
 
 			RB.constraints=RigidbodyConstraints2D.None;
+			RB.constraints=RigidbodyConstraints2D.FreezeRotation;
 
 			animator.SetBool("CanMoove", true);
 
