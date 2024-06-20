@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
     public AudioSource theMusic;
 
     public bool startPlaying;
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     public SpriteManager SpriteManagerGuitar;
     public SpriteManagerAmpli SpriteManagerAmpli;
+    public SpriteManagerAmpli SpriteManagerAmpliSlash;
     public SpriteManagerManche SpriteManagerManche;
     public ButtonHelpSprite ButtonHelpSprite;
     public SpriteManagerLigneOrange SpriteManagerLigneOrange;
@@ -77,13 +79,14 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI multiText;
     public TextMeshProUGUI hitText;
 
+    public GameObject StartDuelEffect;
+
     public AudioSource hitSFX;
     public AudioSource missSFX;
     public AudioSource SpecialNoteHit;
     
     public AudioSource SoundDuelWin;
     public AudioSource SoundDuelLoosed;
-    public AudioSource SoundTheDuelStart;
     
     public AudioClip[] soundsMiss;
 
@@ -157,6 +160,10 @@ public class GameManager : MonoBehaviour
                     ButtonHelpSprite.Unactivated();
 
                     SpriteManagerLigneOrange.Activation();
+
+                    SpriteManagerAmpliSlash.ActivationAmpli();
+
+                    Instantiate (StartDuelEffect);
 
                     transform.position = DuelPlayerPos.position;
 
@@ -311,6 +318,8 @@ public class GameManager : MonoBehaviour
         SpriteManagerManche.Unactivated();
 
         SpriteManagerLigneOrange.Unactivated();
+
+        SpriteManagerAmpliSlash.UnactivatedAmpli();
 
         animator_Slash.SetBool ("startPlaying", true);
         animator_Slash.SetBool ("gameHasEnded", true);

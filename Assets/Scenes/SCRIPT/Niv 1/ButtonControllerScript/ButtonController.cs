@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class ButtonController : MonoBehaviour
 {
@@ -18,6 +19,17 @@ public class ButtonController : MonoBehaviour
     public KeyCode KeyToPress;
 
     public KeyCode JoystickToPress;
+
+    public GameObject SHManager;
+    public GameObject FireFeedBackManager;
+    public GameObject FireFeedBackManager2;
+    
+    public GameObject Canva;
+    public GameObject ScoreEvent;
+    public GameObject HitEvent;
+    
+    public GameObject HitEffect;
+    public GameObject SuperHitEffect;
 
     bool activation = false;
 
@@ -68,6 +80,13 @@ public class ButtonController : MonoBehaviour
                 {
                     LastNoteHit.Press();
                     LastNoteHit = null;
+                    Instantiate (FireFeedBackManager);
+                    Instantiate (FireFeedBackManager2);
+                    GameObject go = Instantiate (ScoreEvent,Canva.transform);
+                    go.GetComponent<TMP_Text>().text = "+ " + GameManager.instance.scorePerNote * GameManager.instance.currentMultiplier;
+                    Instantiate (HitEvent,Canva.transform);
+                    Instantiate (HitEffect);
+
                 }
 
                 if(LastNoteHit != null && LastSpecialNoteHit == null)
@@ -80,6 +99,10 @@ public class ButtonController : MonoBehaviour
                 {
                     LastSpecialNoteHit.SpecialNotePress();
                     LastSpecialNoteHit = null;
+                    Instantiate (SHManager);
+                    Instantiate (FireFeedBackManager);
+                    Instantiate (FireFeedBackManager2);
+                    Instantiate (SuperHitEffect);
                 }
             }
             

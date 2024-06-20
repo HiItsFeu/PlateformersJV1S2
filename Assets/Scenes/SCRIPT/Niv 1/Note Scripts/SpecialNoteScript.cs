@@ -21,6 +21,7 @@ public class SpecialNote : MonoBehaviour
     public bool activation = false;
 
     GameObject lastButtonTouched;
+    public bool SpeciaNotePress = false;
 
     void Start()
     {
@@ -50,6 +51,7 @@ public class SpecialNote : MonoBehaviour
     public void SpecialNotePress()
     {
         Destroyed = true;
+        SpeciaNotePress = true;
         gameObject.SetActive(false);
         GameManager.instance.SpecialNotes();
         //Instantiate(HitEffect, transform.position,HitEffect.transform.rotation);
@@ -80,6 +82,11 @@ public class SpecialNote : MonoBehaviour
         else 
         {
             Activation(false);
+        }
+        
+        if(gManager.gameHasEnded==true)
+        {
+            gameObject.SetActive(false);
         }
     }
 

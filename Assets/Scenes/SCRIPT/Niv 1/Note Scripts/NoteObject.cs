@@ -75,6 +75,11 @@ public class NoteObject : MonoBehaviour
         {
             Activation(false);
         }
+        
+        if(gManager.gameHasEnded==true)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void Activation(bool b)
