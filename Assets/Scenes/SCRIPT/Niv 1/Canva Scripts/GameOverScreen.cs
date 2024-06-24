@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameOverScreen : MonoBehaviour
 {
@@ -12,7 +13,21 @@ public class GameOverScreen : MonoBehaviour
     public AudioSource SoundBackMenu;
 
     public GameObject GameOverCanva;
+
     
+    void Start()
+    {
+        GameOverCanva.SetActive(false);
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton2))
+        {
+            RestartButton();
+        }
+    }
+
     public void Setup(int score)
     {
         GameOverCanva.SetActive(true);
@@ -20,6 +35,7 @@ public class GameOverScreen : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    
     public void RestartButton()
     {
         GameOverCanva.SetActive(false);
@@ -28,7 +44,7 @@ public class GameOverScreen : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void MenuButton()
+    /*public void MenuButton()
     {
         GameOverCanva.SetActive(false);
         SceneManager.LoadScene("MainMenu");
@@ -39,5 +55,5 @@ public class GameOverScreen : MonoBehaviour
     public void quit()
     {
         Application.Quit();
-    }
+    }*/
 }

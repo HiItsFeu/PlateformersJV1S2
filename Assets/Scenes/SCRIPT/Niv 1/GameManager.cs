@@ -56,6 +56,9 @@ public class GameManager : MonoBehaviour
     public CanvaPauseMeny CanvaPauseMenu;
 
     public DuelZoneManager DZManager;
+    public MusiqueChangerZone MusiqueCZ;
+
+    public GameObject Canva;
 
     public int maxHealth = 20;
     public int currentHealth;
@@ -87,6 +90,9 @@ public class GameManager : MonoBehaviour
     
     public AudioSource SoundDuelWin;
     public AudioSource SoundDuelLoosed;
+
+    public AudioSource MainMusic;
+    public AudioSource ChangeMusic;
     
     public AudioClip[] soundsMiss;
 
@@ -95,6 +101,7 @@ public class GameManager : MonoBehaviour
     public Animator animator_Slash;
 
     public bool gameHasEnded=false;
+    public bool DuelWin = false;
     
 
     void Start()
@@ -115,6 +122,10 @@ public class GameManager : MonoBehaviour
         currentHit = 0;
 
         CameraFollow.CameraIsFollowing = true;
+
+        MainMusic.Play();
+
+        animator.SetBool("CanMoove", true);
 
     }
 
@@ -166,19 +177,30 @@ public class GameManager : MonoBehaviour
                     Instantiate (StartDuelEffect);
 
                     transform.position = DuelPlayerPos.position;
-
                     Target.position = DuelPlayerPos.position;
 
                     transform.position = ResetCamera.position;
                     CameraPlayer.position = ResetCamera.position;
                     
                     theMusic.Play();
+                    MainMusic.Stop();
+                    ChangeMusic.Stop();
                 }
+            }
+        }
+        if(MusiqueCZ.MusicCanBeChanged==true)
+        {
+            if(Input.GetKeyDown(KeyCode.N)||(Input.GetKeyDown(KeyCode.JoystickButton2)))
+            {
+                ChangeMusic.Play();
+                MainMusic.Stop();
+                animator.SetBool("CanMoove", false);
             }
         }
     }
     public void NoteHit()
     {
+        GainHealth(1);
         hitSFX.Play();
 
         //Debug.Log("Hit On Time");
@@ -206,7 +228,7 @@ public class GameManager : MonoBehaviour
 
     public void NoteMissed()
     {
-        TakeDamage(1);
+        TakeDamage(2);
 
         missSFX.clip=soundsMiss[Random.Range(0,soundsMiss.Length)];
         missSFX.Play();
@@ -232,6 +254,16 @@ public class GameManager : MonoBehaviour
             GameOver();
             theMusic.Stop();
         }
+    }
+
+    public void GainHealth(int Gain)
+    {
+        if(currentHealth <= maxHealth)
+        {
+            currentHealth += Gain;
+        }
+
+        healthBar.SetHealth(currentHealth);
     }
 
     public void DealDamageToMob (int damageMob)
@@ -267,6 +299,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Damage");
         DealDamageToMob(1);
         SpecialNoteHit.Play();
+        GainHealth(1);
     }
 
     public void SpecialNoteMissed()
@@ -294,6 +327,8 @@ public class GameManager : MonoBehaviour
         theMusic.Stop();
         SoundDuelWin.Play();
         CameraFollow.CameraIsFollowing = true;
+
+        DuelWin = true;
 
         DestroyEnemy.DestroyGameObject();
 

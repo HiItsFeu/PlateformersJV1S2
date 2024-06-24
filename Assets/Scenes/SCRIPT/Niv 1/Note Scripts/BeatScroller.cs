@@ -8,6 +8,8 @@ public class BeatScroller : MonoBehaviour
 
     public bool hasStarted;
 
+    public GameManager GManager;
+
     void Start()
     {
         beatTempo = beatTempo / 60f;
@@ -17,10 +19,10 @@ public class BeatScroller : MonoBehaviour
     {
         if(!hasStarted)
         {
-            /*if(Input.anyKeyDown)
+            if(GManager.startPlaying==true)
             {
                 hasStarted = true;
-            } */
+            }
         }
         else
         {

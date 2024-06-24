@@ -6,7 +6,7 @@ public class SuperHitManager : MonoBehaviour
 {
     public float Lifetime = 1f;
 
-    public void Update()
+    void Update()
     {
         Destroy(gameObject, Lifetime);
     }

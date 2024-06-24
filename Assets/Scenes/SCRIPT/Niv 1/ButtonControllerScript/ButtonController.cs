@@ -31,6 +31,11 @@ public class ButtonController : MonoBehaviour
     public GameObject HitEffect;
     public GameObject SuperHitEffect;
 
+    public GameObject Life1;
+    public GameObject Life2;
+    public GameObject Life1Slash;
+    public GameObject CanvaD;
+
     bool activation = false;
 
     public bool bLeftTriggerToPress;
@@ -75,6 +80,7 @@ public class ButtonController : MonoBehaviour
                 {
                     GameManager.NoteMissed();
                     Debug.Log("Miss");
+                    Instantiate (Life2,CanvaD.transform);
                 }
                 else
                 {
@@ -86,13 +92,17 @@ public class ButtonController : MonoBehaviour
                     go.GetComponent<TMP_Text>().text = "+ " + GameManager.instance.scorePerNote * GameManager.instance.currentMultiplier;
                     Instantiate (HitEvent,Canva.transform);
                     Instantiate (HitEffect);
-
+                    if(GameManager.currentHealth <= GameManager.maxHealth)
+                    {
+                        Instantiate (Life1,CanvaD.transform);
+                    }
                 }
 
                 if(LastNoteHit != null && LastSpecialNoteHit == null)
                 {
                     GameManager.NoteMissed();
                     Debug.Log("Special Miss");
+                    Instantiate (Life2,CanvaD.transform);
                 }
                 
                 if(LastSpecialNoteHit != null)
@@ -103,6 +113,7 @@ public class ButtonController : MonoBehaviour
                     Instantiate (FireFeedBackManager);
                     Instantiate (FireFeedBackManager2);
                     Instantiate (SuperHitEffect);
+                    Instantiate (Life1Slash,CanvaD.transform);
                 }
             }
             

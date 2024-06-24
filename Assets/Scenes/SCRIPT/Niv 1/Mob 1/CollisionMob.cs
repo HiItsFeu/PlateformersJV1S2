@@ -6,7 +6,7 @@ public class CollisionMob : MonoBehaviour
 {
     public ResetPlayer ResetPlayer;
 
-    private float Speed = 4f;
+   /* private float Speed = 4f;
     Vector2 position;
     Vector2 target;
 
@@ -20,7 +20,7 @@ public class CollisionMob : MonoBehaviour
     {
         float step = Speed * Time.deltaTime;
         transform.position = transform.position + new Vector3(-Time.deltaTime, 0, 0);
-    }
+    }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))

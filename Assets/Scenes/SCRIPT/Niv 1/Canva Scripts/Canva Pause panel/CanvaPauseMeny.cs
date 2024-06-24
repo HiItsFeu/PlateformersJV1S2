@@ -12,7 +12,10 @@ public class CanvaPauseMeny : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameManager GameManager;
+
     private float currentTime;
+    private float currentTimeMainMusic;
+    private float currentTimeChangeMusic;
 
     public AudioSource SoundBackMenu;
     public AudioSource SoundEnterMenu;
@@ -45,10 +48,21 @@ public class CanvaPauseMeny : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+
+        if(!GameManager.theMusic.isPlaying)
+        {
+            currentTimeMainMusic = GameManager.MainMusic.time;
+            GameManager.MainMusic.Stop();
+        }
         if(GameManager.theMusic.isPlaying)
         {
             currentTime = GameManager.theMusic.time;
             GameManager.theMusic.Stop();
+        }
+        if(GameManager.ChangeMusic.isPlaying)
+        {
+            currentTimeChangeMusic = GameManager.ChangeMusic.time;
+            GameManager.ChangeMusic.Stop();
         }
         GameIsPaused = true;
     }
@@ -66,6 +80,28 @@ public class CanvaPauseMeny : MonoBehaviour
                 GameManager.theMusic.time = currentTime;
             }
         }
+        if(!GameManager.theMusic.isPlaying)
+        {
+            if(!GameManager.ChangeMusic.isPlaying)
+            {
+                GameManager.MainMusic.Play();
+                GameManager.MainMusic.time = currentTimeMainMusic;
+            }
+        }
+        if(!GameManager.theMusic.isPlaying)
+        {
+            if(GameManager.MainMusic.isPlaying)
+            {
+                if(GameManager.ChangeMusic.isPlaying)
+                {
+                    GameManager.ChangeMusic.time = currentTimeChangeMusic;
+                    GameManager.ChangeMusic.Play();
+
+                    GameManager.MainMusic.Stop();
+                    currentTime = GameManager.theMusic.time;
+                }
+            }
+        }
         GameIsPaused = false;
     }
     
@@ -77,6 +113,10 @@ public class CanvaPauseMeny : MonoBehaviour
         if(GameManager.startPlaying)
         {
             GameManager.theMusic.Play();
+        }
+        if(!GameManager.startPlaying)
+        {
+            GameManager.MainMusic.Play();
         }
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
