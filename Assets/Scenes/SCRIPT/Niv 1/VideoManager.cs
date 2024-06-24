@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class VideoManager : MonoBehaviour
 {
     public float Lifetime = 0.4f;
-    public GameManager GManager;
     public VideoPlayer videoPlayer;
+    private bool videocanbePlay = false;
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(GManager.DuelWin==true)
+        if(collision.CompareTag("Player"))
         {
-            videoPlayer.Play();
-            Destroy(gameObject, Lifetime);
+            Debug.Log("Collision");
+            PlayVideo();
         }
+    }
+    
+    void PlayVideo()
+    {
+        videoPlayer.Play();
+        Destroy(gameObject, Lifetime);
     }
 }

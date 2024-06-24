@@ -19150,6 +19150,7 @@ MonoBehaviour:
   animator: {fileID: 1129717022}
   animator_Slash: {fileID: 1850514854}
   gameHasEnded: 0
+  DuelWin: 0
 --- !u!4 &547132037
 Transform:
   m_ObjectHideFlags: 0
@@ -68124,7 +68125,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90054a0d1761cd14db38b48ff8a1df12, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
